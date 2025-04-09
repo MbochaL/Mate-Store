@@ -1,27 +1,24 @@
 <!-- 🔹 Carrusel de imágenes -->
-<section class="container mt-4">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
-        </div>
+<section class=" r">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<?php echo base_url('/assets/img/bandas-elasticas.jpg') ?>" class="d-block w-100" alt="bandas elasticas">
+                <img src="<?php echo base_url('/assets/img/mate1.jpg') ?>" class="img-fluid w-100" alt="image mate 1">
             </div>
             <div class="carousel-item">
-                <img src="<?php echo base_url('/assets/img/barras-paralelas-altas.jpg') ?>" class="d-block w-100" alt="barras paralelas altas">
+                <img src="<?php echo base_url('/assets/img/mate2.jpg') ?>" class="d-block w-100" alt="image mate 2">
             </div>
             <div class="carousel-item">
-                <img src="<?php echo base_url('/assets/img/barras-paralelas-bajas.jpg') ?>" class="d-block w-100" alt="barras paralelas bajas">
+                <img src="<?php echo base_url('/assets/img/mate3.jpg') ?>" class="d-block w-100" alt="image mate 3">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
     </div>
 </section>
