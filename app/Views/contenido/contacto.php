@@ -1,2 +1,5 @@
-<h1>Contacto</h1>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="text-center">
+  <br><br><br><br><br><br>
+  <h1>Proximamente</h1>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
