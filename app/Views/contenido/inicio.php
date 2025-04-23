@@ -1,6 +1,6 @@
 <!-- 🔹 Carrusel de imágenes -->
-<section class="container-fluid my-5">
-  <div id="carouselExampleAutoplaying" class="carousel slide w-100 mx-auto overflow-hidden" style="max-height: 400px;" data-bs-ride="carousel">
+<section class="container-max-widths">
+  <div id="carouselExampleAutoplaying" class="carousel slide w-100 mx-auto overflow-hidden" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="<?php echo base_url('/assets/img/carousel1.jpg') ?>" class="d-block w-100 h-100 object-fit-cover" alt="image mate 1">
