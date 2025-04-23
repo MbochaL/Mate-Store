@@ -1,3 +1,19 @@
+<style>
+  li strong, h1 {
+    color: #59220e;
+    font-weight: 800;
+  }
+
+  li strong {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+</style>
+
 <div class="terminos-page py-5">
   <div class="container">
     <h1 class="mb-4 text-center">Términos y Usos</h1>
@@ -24,7 +40,7 @@
       </li>
 
       <li class="mb-4">
-        <strong>Soporte Postventa:</strong> Brindamos atención postventa para consultas, cambios y devoluciones. Puede contactarnos a través del formulario de contacto, correo electrónico o por nuestras redes sociales oficiales.
+        <strong>Soporte Post Venta:</strong> Brindamos atención postventa para consultas, cambios y devoluciones. Puede contactarnos a través del formulario de contacto, correo electrónico o por nuestras redes sociales oficiales.
       </li>
 
       <li class="mb-4">

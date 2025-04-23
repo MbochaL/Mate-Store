@@ -13,17 +13,6 @@
   color: #59220e;
 }
 
-.nav-link:hover {
-  color: #af380d;
-  border-bottom: 1px solid #59220e;
-  text-decoration: none;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  transition-duration: 0.7s;
-}
-
 .nav-link:visited {
   color: #59220e;
   text-decoration: none;
@@ -41,18 +30,8 @@
   border-radius: 32px;
 }
 
-.nav-access:hover {
-  width: 120px;
-  text-align: center;
-  background: #427777;
-  border: 1.5px solid #59220e;
-  color: #f2efbb;
-  transition: all 0.1s ease;
-  transition-duration: 0.1s;
-}
-
 .nav-title {
-  color: #59220e;
+  color: #f2efbb;
   font-family: "Gravitas One", cursive;
   font-size: 20px;
   font-weight: 700;
