@@ -9,6 +9,8 @@ class Home extends BaseController
     return view('/plantillas/header_view')
       . view('/plantillas/nav_view')
       . view('/contenido/inicio')
+      . view('/contenido/home/vendidos')
+      . view('/contenido/home/categorias')
       . view('/plantillas/footer_view');
   }
 
