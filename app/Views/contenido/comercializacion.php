@@ -277,7 +277,7 @@
         <p class="mb-0">
           <i class="bi bi-question-circle me-2" style="color: #59220e;"></i>
           <span class="fw-bold">¿Tenés más preguntas?</span> Visitá nuestra sección de 
-          <a href="#" class="text-decoration-none" style="color: #59220e; border-bottom: 1px dashed #f2efbb;">Contacto</a>
+          <a href="contacto" class="text-decoration-none" style="color: #59220e; border-bottom: 1px dashed #f2efbb;">Contacto</a>
         </p>
       </div>
     </div>
