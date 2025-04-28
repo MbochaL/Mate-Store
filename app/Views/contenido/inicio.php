@@ -4,17 +4,18 @@
     margin-bottom: 2rem;
     position: relative;
   }
-  
+
   .carousel-container {
     max-width: 100%;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
-  
+
   .carousel-item {
-    height: 500px; /* Altura estándar para el carrusel */
+    height: 500px;
+    /* Altura estándar para el carrusel */
   }
-  
+
   /* Asegura que las imágenes cubran bien el área en todas las pantallas */
   .carousel-image {
     width: 100%;
@@ -22,7 +23,7 @@
     object-fit: cover;
     object-position: center;
   }
-  
+
   /* Mejora los controles del carrusel */
   .carousel-control-prev,
   .carousel-control-next {
@@ -30,12 +31,12 @@
     opacity: 0;
     transition: all 0.3s ease;
   }
-  
+
   .carousel-container:hover .carousel-control-prev,
   .carousel-container:hover .carousel-control-next {
     opacity: 0.8;
   }
-  
+
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     background-color: rgba(89, 34, 14, 0.7);
@@ -47,12 +48,12 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   /* Estilo para los indicadores */
   .carousel-indicators {
     margin-bottom: 1rem;
   }
-  
+
   .carousel-indicators [data-bs-target] {
     width: 12px;
     height: 12px;
@@ -61,11 +62,11 @@
     border: 2px solid rgba(89, 34, 14, 0.5);
     margin: 0 5px;
   }
-  
+
   .carousel-indicators .active {
     background-color: #59220e;
   }
-  
+
   /* Overlay para textos en el carrusel */
   .carousel-caption {
     background-color: rgba(89, 34, 14, 0.7);
@@ -77,18 +78,18 @@
     left: 2rem;
     right: auto;
   }
-  
+
   .carousel-caption h2 {
     font-weight: 700;
     margin-bottom: 0.5rem;
     font-size: 1.8rem;
   }
-  
+
   .carousel-caption p {
     font-size: 1rem;
     margin-bottom: 1rem;
   }
-  
+
   .carousel-btn {
     background-color: #f2efbb;
     color: #59220e;
@@ -100,54 +101,57 @@
     text-decoration: none;
     display: inline-block;
   }
-  
+
   .carousel-btn:hover {
     background-color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #59220e;
   }
-  
+
   /* Responsive para pantallas pequeñas */
   @media (max-width: 767.98px) {
     .carousel-item {
-      height: 350px; /* Altura reducida para móviles */
+      height: 350px;
+      /* Altura reducida para móviles */
     }
-    
+
     .carousel-caption {
       max-width: 80%;
       padding: 1rem;
       bottom: 1rem;
       left: 1rem;
     }
-    
+
     .carousel-caption h2 {
       font-size: 1.4rem;
     }
-    
+
     .carousel-caption p {
       font-size: 0.9rem;
       margin-bottom: 0.5rem;
     }
   }
-  
+
   /* Responsive para pantallas muy pequeñas */
   @media (max-width: 575.98px) {
     .carousel-item {
-      height: 250px; /* Altura aún más reducida para móviles pequeños */
+      height: 250px;
+      /* Altura aún más reducida para móviles pequeños */
     }
-    
+
     .carousel-caption {
       max-width: 90%;
       padding: 0.75rem;
     }
-    
+
     .carousel-caption h2 {
       font-size: 1.2rem;
     }
-    
+
     .carousel-caption p {
-      display: none; /* Ocultar descripción en pantallas muy pequeñas */
+      display: none;
+      /* Ocultar descripción en pantallas muy pequeñas */
     }
   }
 </style>
@@ -162,7 +166,7 @@
           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        
+
         <!-- Slides del carrusel -->
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -170,29 +174,29 @@
             <div class="carousel-caption">
               <h2>Colección de Mates Premium</h2>
               <p>Descubrí nuestra selección de mates artesanales de la más alta calidad</p>
-              <a href="<?php echo base_url('/productos/mates'); ?>" class="carousel-btn">Ver colección</a>
+              <a href="<?php echo base_url('inicio'); ?>" class="carousel-btn z-3 position-relative">Ver colección</a>
             </div>
           </div>
-          
+
           <div class="carousel-item">
             <img src="<?php echo base_url('/assets/img/carousel2.jpg') ?>" class="carousel-image" alt="Sets Materos Completos">
             <div class="carousel-caption">
               <h2>Sets Materos Completos</h2>
               <p>Todo lo que necesitás para disfrutar del mejor mate en un solo lugar</p>
-              <a href="<?php echo base_url('/productos/sets'); ?>" class="carousel-btn">Ver sets</a>
+              <a href="<?php echo base_url('inicio'); ?>" class="carousel-btn z-3 position-relative">Ver sets</a>
             </div>
           </div>
-          
+
           <div class="carousel-item">
             <img src="<?php echo base_url('/assets/img/carousel3.jpg') ?>" class="carousel-image" alt="Ofertas Especiales">
             <div class="carousel-caption">
               <h2>Ofertas Especiales</h2>
               <p>Aprovechá nuestros descuentos exclusivos por tiempo limitado</p>
-              <a href="<?php echo base_url('/ofertas'); ?>" class="carousel-btn">Ver ofertas</a>
+              <a href="<?php echo base_url('inicio'); ?>" class="carousel-btn z-3 position-relative">Ver ofertas</a>
             </div>
           </div>
         </div>
-        
+
         <!-- Controles de navegación -->
         <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

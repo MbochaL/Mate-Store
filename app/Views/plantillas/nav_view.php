@@ -122,7 +122,7 @@
     <div class="container">
 
       <!-- Logo + nombre de la tienda -->
-      <a class="navbar-brand navbar-brand-mate d-flex align-items-center fw-bold" href="<?php echo base_url('inicio'); ?>">
+      <a class="navbar-brand navbar-brand-mate d-flex align-items-center fw-bold " href="<?php echo base_url('inicio'); ?>">
         <img src="<?php echo base_url('/assets/img/logo-mate-store.png'); ?>" style="width: 50px; height: 50px;" alt="logo" />
         <span class="ms-2 footer-title">Mate Store</span>
       </a>

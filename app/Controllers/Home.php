@@ -16,12 +16,14 @@ class Home extends BaseController
 
   public function login(): string
   {
-    return  view('/plantillas/header_view').view('/auth/login');
+    return view('/plantillas/header_view')
+      . view('/auth/login');
   }
 
   public function register(): string
   {
-    return view('/plantillas/header_view').view('/auth/register');
+    return view('/plantillas/header_view')
+      . view('/auth/register');
   }
 
   public function comercializacion()

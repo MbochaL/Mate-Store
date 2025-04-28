@@ -236,7 +236,7 @@
             <h3>Envianos un mensaje</h3>
           </div>
           <div class="contact-body">
-            <form action="<?php echo base_url('contacto/enviar'); ?>" method="post">
+            <form action="<?php echo base_url('contacto'); ?>" method="post">
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="form-floating mb-3">
