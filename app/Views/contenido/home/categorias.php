@@ -184,6 +184,34 @@
     text-decoration: none;
   }
 
+  @media (max-width: 1150px) {
+    .category-btn {
+      padding: 4px 8px;
+    }
+
+    .product-count {
+      padding: 5px 10px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .category-action {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .category-btn {
+      padding: 10px 20px;
+    }
+
+    .product-count {
+      padding: 5px 15px;
+    }
+  }
+
   .category-btn:hover {
     background-color: #4a1c0c;
     transform: translateX(5px);
@@ -263,7 +291,7 @@
 </style>
 
 <section class="categories-showcase">
-  <div style="margin: 50px 50px">
+  <div class="container">
     <div class="section-header">
       <h2 class="section-title">Nuestras Categorías</h2>
       <p class="section-subtitle">Descubrí nuestra selección de productos premium para disfrutar del mejor mate</p>
