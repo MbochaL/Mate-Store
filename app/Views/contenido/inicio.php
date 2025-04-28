@@ -15,8 +15,7 @@
     height: 500px;
     /* Altura estándar para el carrusel */
   }
-
-  /* Asegura que las imágenes cubran bien el área en todas las pantallas */
+  
   .carousel-image {
     width: 100%;
     height: 100%;
@@ -78,7 +77,7 @@
     left: 2rem;
     right: auto;
   }
-
+  
   .carousel-caption h2 {
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -101,7 +100,6 @@
     text-decoration: none;
     display: inline-block;
   }
-
   .carousel-btn:hover {
     background-color: #fff;
     transform: translateY(-2px);
@@ -115,7 +113,7 @@
       height: 350px;
       /* Altura reducida para móviles */
     }
-
+    
     .carousel-caption {
       max-width: 80%;
       padding: 1rem;
@@ -132,26 +130,24 @@
       margin-bottom: 0.5rem;
     }
   }
-
+  
   /* Responsive para pantallas muy pequeñas */
   @media (max-width: 575.98px) {
     .carousel-item {
-      height: 250px;
-      /* Altura aún más reducida para móviles pequeños */
+      height: 250px; /* Altura aún más reducida para móviles pequeños */
     }
-
+    
     .carousel-caption {
       max-width: 90%;
       padding: 0.75rem;
     }
-
+    
     .carousel-caption h2 {
       font-size: 1.2rem;
     }
-
+    
     .carousel-caption p {
-      display: none;
-      /* Ocultar descripción en pantallas muy pequeñas */
+      display: none; /* Ocultar descripción en pantallas muy pequeñas */
     }
   }
 </style>
@@ -166,7 +162,6 @@
           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-
         <!-- Slides del carrusel -->
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -177,7 +172,6 @@
               <a href="<?php echo base_url('inicio'); ?>" class="carousel-btn z-3 position-relative">Ver colección</a>
             </div>
           </div>
-
           <div class="carousel-item">
             <img src="<?php echo base_url('/assets/img/carousel2.jpg') ?>" class="carousel-image" alt="Sets Materos Completos">
             <div class="carousel-caption">
@@ -186,7 +180,6 @@
               <a href="<?php echo base_url('inicio'); ?>" class="carousel-btn z-3 position-relative">Ver sets</a>
             </div>
           </div>
-
           <div class="carousel-item">
             <img src="<?php echo base_url('/assets/img/carousel3.jpg') ?>" class="carousel-image" alt="Ofertas Especiales">
             <div class="carousel-caption">
@@ -196,7 +189,6 @@
             </div>
           </div>
         </div>
-
         <!-- Controles de navegación -->
         <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
