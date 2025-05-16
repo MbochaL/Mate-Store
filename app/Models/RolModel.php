@@ -4,19 +4,19 @@ namespace app\Models;
 
 use CodeIgniter\Model;
 
-class VentaModel extends Model
+class RolModel extends Model
 {
-  protected $table      = 'venta';
+  protected $table      = 'rol';
+  protected $primaryKey = 'id_rol';
 
-
-  protected $useAutoIncrement = false;
+  protected $useAutoIncrement = true;
 
   protected $returnType     = 'array'; //object
   protected $useSoftDeletes = false;
 
-  protected $allowedFields = ['id_factura', 'id_producto', 'cantidad_venta', 'precio_unitario_venta'];
+  protected $allowedFields = ['id_rol', 'nombre_rol'];
 
-  protected bool $allowEmptyInserts = true;
+  protected bool $allowEmptyInserts = false;
   protected bool $updateOnlyChanged = true;
 
   // Dates
