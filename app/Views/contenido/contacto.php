@@ -5,7 +5,7 @@
     padding: 3rem 0;
     background-color: rgba(242, 239, 187, 0.1);
   }
-  
+
   .page-title {
     color: #59220e;
     font-weight: 700;
@@ -14,7 +14,7 @@
     padding-bottom: 15px;
     margin-bottom: 1rem;
   }
-  
+
   .page-title::after {
     content: '';
     position: absolute;
@@ -25,7 +25,7 @@
     height: 3px;
     background-color: #f2efbb;
   }
-  
+
   .contact-card {
     background-color: #fff;
     border-radius: 10px;
@@ -34,24 +34,24 @@
     height: 100%;
     transition: all 0.3s ease;
   }
-  
+
   .contact-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(89, 34, 14, 0.15);
   }
-  
+
   .contact-header {
     background-color: #59220e;
     color: #fff;
     padding: 1.5rem;
     position: relative;
   }
-  
+
   .contact-header h3 {
     margin-bottom: 0;
     font-weight: 600;
   }
-  
+
   .contact-header::before {
     content: '';
     position: absolute;
@@ -61,21 +61,21 @@
     height: 100%;
     background-color: #f2efbb;
   }
-  
+
   .contact-body {
     padding: 2rem;
   }
-  
+
   .contact-info-item {
     display: flex;
     margin-bottom: 1.5rem;
     align-items: flex-start;
   }
-  
+
   .contact-info-item:last-child {
     margin-bottom: 0;
   }
-  
+
   .contact-icon {
     background-color: #f2efbb;
     color: #59220e;
@@ -89,68 +89,70 @@
     font-size: 1.2rem;
     flex-shrink: 0;
   }
-  
+
   .contact-content {
     flex-grow: 1;
   }
-  
+
   .contact-label {
     font-weight: 600;
     margin-bottom: 0.2rem;
     color: #59220e;
   }
-  
+
   .contact-text {
     margin-bottom: 0;
     color: #59220e;
     opacity: 0.9;
   }
-  
+
   .contact-link {
     color: #59220e;
     text-decoration: none;
     transition: all 0.3s ease;
     border-bottom: 1px dashed #f2efbb;
   }
-  
+
   .contact-link:hover {
     color: #59220e;
     border-bottom: 1px solid #59220e;
   }
-  
-  .form-floating > label {
+
+  .form-floating>label {
     color: #59220e;
     opacity: 0.7;
   }
-  
+
   .form-control:focus {
     border-color: #f2efbb;
     box-shadow: 0 0 0 0.25rem rgba(242, 239, 187, 0.25);
   }
-  
+
   .contact-btn {
     background-color: #59220e;
     border-color: #59220e;
     color: #fff;
+    width: 100%;
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     transition: all 0.3s ease;
   }
-  
-  .contact-btn:hover, .contact-btn:focus {
+
+  .contact-btn:hover,
+  .contact-btn:focus {
     background-color: #4a1c0c;
     border-color: #4a1c0c;
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(89, 34, 14, 0.2);
   }
-  
+
   .social-links {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
   }
-  
+
   .social-link {
     display: flex;
     align-items: center;
@@ -163,20 +165,20 @@
     transition: all 0.3s ease;
     text-decoration: none;
   }
-  
+
   .social-link:hover {
     background-color: #59220e;
     color: #f2efbb;
     transform: translateY(-3px);
   }
-  
+
   .map-container {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(89, 34, 14, 0.1);
     position: relative;
   }
-  
+
   .map-container::before {
     content: '';
     position: absolute;
@@ -187,34 +189,34 @@
     background-color: #59220e;
     z-index: 1;
   }
-  
+
   .map-iframe {
     width: 100%;
     height: 450px;
     border: none;
   }
-  
+
   .section-divider {
     height: 2px;
     background-color: rgba(242, 239, 187, 0.5);
     margin: 3rem 0;
   }
-  
+
   .contact-hours {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
     border-bottom: 1px dashed rgba(89, 34, 14, 0.2);
   }
-  
+
   .contact-hours:last-child {
     border-bottom: none;
   }
-  
+
   .day {
     font-weight: 600;
   }
-  
+
   .hours {
     color: #59220e;
     opacity: 0.8;
@@ -227,16 +229,16 @@
       <h1 class="page-title display-5">Contacto</h1>
       <p class="lead">Estamos aquí para ayudarte. ¡Contactanos!</p>
     </div>
-    
+
     <div class="row g-4 mb-5">
       <!-- Formulario de contacto -->
       <div class="col-lg-7">
         <div class="contact-card h-100">
           <div class="contact-header">
-            <h3>Envianos un mensaje</h3>
+            <h3>Envíanos un mensaje</h3>
           </div>
           <div class="contact-body">
-            <form action="<?php echo base_url('contacto'); ?>" method="post">
+            <form action="<?= base_url('contacto') ?>" method="post">
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="form-floating mb-3">
@@ -246,37 +248,42 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
-                    <label for="email">Correo electrónico</label>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="nombre@ejemplo.com" required>
+                    <label for="correo">Correo electrónico</label>
                   </div>
                 </div>
               </div>
-              
+
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="asunto" name="asunto" placeholder="Asunto" required>
                 <label for="asunto">Asunto</label>
               </div>
-              
+
               <div class="form-floating mb-3">
-                <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Tu mensaje" style="height: 150px" required></textarea>
+                <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Tu mensaje" style="height: 400px" required></textarea>
                 <label for="mensaje">Mensaje</label>
               </div>
-              
-              <div class="form-check mb-4">
-                <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
-                <label class="form-check-label" for="newsletter">
-                  Quiero recibir novedades y promociones por email
-                </label>
-              </div>
-              
+
               <button type="submit" class="btn contact-btn">
-                <i class="bi bi-send me-2"></i> Enviar mensaje
+                <i class="bi bi-send me-2"></i> Enviar Consulta
               </button>
             </form>
+
+            <?php if (session()->getFlashdata('mensaje_consulta')) : ?>
+              <div class="alert alert-success mt-3">
+                <?= session()->getFlashdata('mensaje_consulta') ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if (!empty($validation)) : ?>
+              <div class="alert alert-danger mt-3">
+                <?= implode('<br>', $validation) ?>
+              </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
-      
+
       <!-- Información de contacto -->
       <div class="col-lg-5">
         <div class="contact-card h-100">
@@ -293,7 +300,7 @@
                 <p class="contact-text">Av. Costanera 1234, Corrientes Capital, CP 3400, Argentina</p>
               </div>
             </div>
-            
+
             <div class="contact-info-item">
               <div class="contact-icon">
                 <i class="bi bi-telephone-fill"></i>
@@ -308,7 +315,7 @@
                 </p>
               </div>
             </div>
-            
+
             <div class="contact-info-item">
               <div class="contact-icon">
                 <i class="bi bi-envelope-fill"></i>
@@ -323,7 +330,7 @@
                 </p>
               </div>
             </div>
-            
+
             <div class="contact-info-item">
               <div class="contact-icon">
                 <i class="bi bi-clock-fill"></i>
@@ -346,7 +353,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="mt-4">
               <h4 class="contact-label">Seguinos en redes</h4>
               <div class="social-links">
@@ -368,9 +375,9 @@
         </div>
       </div>
     </div>
-    
+
     <div class="section-divider"></div>
-    
+
     <!-- Mapa -->
     <div class="mb-5">
       <h2 class="text-center mb-4">Encontranos aquí</h2>

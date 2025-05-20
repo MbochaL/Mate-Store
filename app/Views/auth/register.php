@@ -193,130 +193,86 @@
 <div class="auth-container">
   <div class="auth-card">
     <div class="auth-header">
-      <a href="inicio">
-        <img src="<?php echo base_url('/assets/img/logo-mate-store.png'); ?>" alt="Mate Store Logo" class="auth-logo">
+      <a href="<?= base_url('inicio') ?>">
+        <img src="<?= base_url('/assets/img/logo-mate-store.png') ?>" alt="Mate Store Logo" class="auth-logo">
       </a>
       <h1 class="auth-title">Creá tu cuenta</h1>
       <p class="auth-subtitle">Registrate para disfrutar de todos nuestros productos</p>
     </div>
 
     <div class="auth-body">
-      <form id="registerForm" action="<?php echo base_url('inicio'); ?>" method="post">
+      <?php if (session()->getFlashdata('mensaje')): ?>
+        <div class="alert alert-danger">
+          <?= session()->getFlashdata('mensaje') ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if (session('validation')): ?>
+        <div class="alert alert-danger">
+          <?php foreach (session('validation') as $error): ?>
+            <p><?= esc($error) ?></p>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+
+      <form id="registerForm" action="<?= base_url('register') ?>" method="post">
+        <?= csrf_field() ?>
+
         <div class="row g-3">
           <div class="col-md-6">
             <div class="form-floating">
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
-              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" name="nombre_usuario" placeholder="Tu nombre" required value="<?= old('nombre_usuario') ?>">
+              <label for="nombre_usuario">Nombre</label>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-floating">
-              <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Tu apellido" required>
-              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" name="apellido_usuario" placeholder="Tu apellido" required value="<?= old('apellido_usuario') ?>">
+              <label for="apellido_usuario">Apellido</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-2">
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="telefono_usuario" placeholder="Telefono. Ej: 3794567890" required value="<?= old('telefono_usuario') ?>">
+              <label for="telefono_usuario">Teléfono</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="dni_usuario" placeholder="Documento Nacional de Identidad" required value="<?= old('dni_usuario') ?>">
+              <label for="dni_usuario">DNI</label>
             </div>
           </div>
         </div>
 
         <div class="form-floating my-3">
-          <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
-          <label for="email">Correo electrónico</label>
+          <input type="text" class="form-control" name="direccion_usuario" placeholder="Dirección del usuario" required value="<?= old('direccion_usuario') ?>">
+          <label for="direccion_usuario">Dirección</label>
+        </div>
+
+        <div class="form-floating my-3">
+          <input type="email" class="form-control" name="email_usuario" placeholder="Correo electrónico" required value="<?= old('email_usuario') ?>">
+          <label for="email_usuario">Correo electrónico</label>
         </div>
 
         <div class="form-floating mb-2">
-          <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
-          <label for="password">Contraseña</label>
-          <div class="password-strength">
-            <div class="password-strength-meter"></div>
-          </div>
-        </div>
-
-        <div class="form-floating mb-3">
-          <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirmar contraseña" required>
-          <label for="confirm_password">Confirmar contraseña</label>
-        </div>
-
-        <div id="error-message" style="color: red; font-size: 0.9rem; margin-bottom: 10px;"></div> <!-- Mensaje de error -->
-
-        <div class="form-check mb-4">
-          <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
-          <label class="form-check-label" for="terms" style="color: #59220e;">
-            Acepto los <a href="<?php echo base_url('terminos-y-condiciones'); ?>" class="auth-link">Términos y Condiciones</a>
-          </label>
+          <input type="password" class="form-control" name="pass_usuario" placeholder="Contraseña" required>
+          <label for="pass_usuario">Contraseña</label>
         </div>
 
         <button type="submit" class="btn auth-btn w-100">Crear cuenta</button>
       </form>
 
       <div class="text-center mt-4">
-        <p>¿Ya tenés una cuenta? <a href="<?php echo base_url('login'); ?>" class="auth-link">Iniciá sesión</a></p>
+        <p>¿Ya tenés una cuenta? <a href="<?= base_url('login') ?>" class="auth-link">Iniciá sesión</a></p>
       </div>
     </div>
 
     <div class="auth-footer">
-      <p>
-        <span class="mate-icon">
-          <i class="bi bi-cup-hot-fill"></i>
-        </span>
-        Mate Store © 2025
-      </p>
+      <p><span class="mate-icon"><i class="bi bi-cup-hot-fill"></i></span> Mate Store © 2025</p>
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirm_password');
-    const strengthMeter = document.querySelector('.password-strength-meter');
-    const errorMessage = document.getElementById('error-message'); // Mensaje de error
-    const form = document.getElementById('registerForm');
-
-    // Inicializar el medidor en estado vacío
-    strengthMeter.style.width = '0';
-    strengthMeter.className = 'password-strength-meter';
-
-    passwordInput.addEventListener('input', function() {
-      const value = passwordInput.value;
-      let strength = 0;
-
-      // Criterios de fuerza de contraseña
-      if (value.length >= 8) strength += 1;
-      if (/[A-Z]/.test(value) && /[a-z]/.test(value)) strength += 1;
-      if (/[0-9]/.test(value)) strength += 1;
-      if (/[^A-Za-z0-9]/.test(value)) strength += 1;
-
-      // Actualizar el medidor según la fuerza
-      strengthMeter.className = 'password-strength-meter';
-
-      if (value.length === 0) {
-        strengthMeter.style.width = '0';
-        // Asegurar que no se apliquen clases de fuerza cuando está vacío
-        strengthMeter.classList.remove('strength-weak', 'strength-medium', 'strength-strong');
-      } else if (strength <= 2) {
-        strengthMeter.classList.add('strength-weak');
-        strengthMeter.style.width = '25%'; // Ajusta el porcentaje según tus preferencias
-      } else if (strength === 3) {
-        strengthMeter.classList.add('strength-medium');
-        strengthMeter.style.width = '50%'; // Ajusta el porcentaje según tus preferencias
-      } else {
-        strengthMeter.classList.add('strength-strong');
-        strengthMeter.style.width = '100%'; // Ajusta el porcentaje según tus preferencias
-      }
-    });
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevenir el envío del formulario
-
-      const password = passwordInput.value;
-      const confirmPassword = confirmPasswordInput.value;
-
-      if (password !== confirmPassword) {
-        errorMessage.textContent = 'Las contraseñas no coinciden. Por favor, verifica e inténtalo nuevamente.';
-        errorMessage.style.color = 'red'; // Aplicar estilo al mensaje de error
-      } else {
-        errorMessage.textContent = ''; // Limpiar mensaje de error
-        window.location.href = 'inicio'; // Cambia por la URL de tu página de inicio
-      }
-    });
-  });
-</script>
