@@ -98,102 +98,62 @@
     border-bottom: 1px solid #f2efbb;
   }
 
-  .auth-divider {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0;
-  }
-
-  .auth-divider::before,
-  .auth-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: rgba(89, 34, 14, 0.2);
-  }
-
-  .auth-divider-text {
-    padding: 0 1rem;
-    color: #59220e;
-    opacity: 0.7;
-  }
-
-  .social-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    border: 1px solid rgba(89, 34, 14, 0.2);
-    color: #59220e;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .social-btn:hover {
-    background-color: #f2efbb;
-    border-color: #f2efbb;
-    transform: translateY(-2px);
-  }
-
-  .social-icon {
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  .mate-icon {
-    display: inline-block;
-    transform: rotate(-15deg);
-  }
-
   .auth-footer {
     text-align: center;
     padding: 1rem 2rem 2rem;
     color: #59220e;
     opacity: 0.7;
   }
+
+  .mate-icon {
+    display: inline-block;
+    transform: rotate(-15deg);
+  }
 </style>
 
 <div class="auth-container">
   <div class="auth-card">
     <div class="auth-header">
-      <a href="inicio">
-        <img src="<?php echo base_url('/assets/img/logo-mate-store.png'); ?>" alt="Mate Store Logo" class="auth-logo">
+      <a href="<?= base_url('inicio'); ?>">
+        <img src="<?= base_url('/assets/img/logo-mate-store.png'); ?>" alt="Mate Store Logo" class="auth-logo">
       </a>
-      <h1 class="auth-title">¡Bienvenido de nuevo!</h1>
-      <p class="auth-subtitle">Iniciá sesión para acceder a tu cuenta</p>
+      <h3 class="auth-title">¡Bienvenido a Mate Store!</h3>
     </div>
 
     <div class="auth-body">
-      <form action="<?php echo base_url('login'); ?>" method="post">
+      <!-- Mostrar mensaje de error -->
+      <?php if (session()->getFlashdata('mensaje')): ?>
+        <div class="alert alert-danger">
+          <?= session()->getFlashdata('mensaje') ?>
+        </div>
+      <?php endif; ?>
+
+      <!-- Mostrar errores de validación -->
+      <?php if (isset($validation)): ?>
+        <div class="alert alert-danger">
+          <?php foreach ($validation as $error): ?>
+            <p><?= esc($error) ?></p>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+
+      <form action="<?= base_url('login'); ?>" method="post">
+        <?= csrf_field() ?>
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
+          <input type="email" class="form-control" id="email" name="email_usuario" placeholder="nombre@ejemplo.com" required>
           <label for="email">Correo electrónico</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+          <input type="password" class="form-control" id="password" name="pass_usuario" placeholder="Contraseña" required>
           <label for="password">Contraseña</label>
         </div>
 
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="remember" name="remember">
-            <label class="form-check-label" for="remember" style="color: #59220e;">
-              Recordarme
-            </label>
-          </div>
-          <a href="<?php echo base_url('login'); ?>" class="auth-link text-center">¿Olvidaste tu contraseña?</a>
-        </div>
-
-        <button type="button" class="btn auth-btn w-100" onclick="location.href='<?php echo base_url('inicio'); ?>';">Iniciar sesión</button>
-
+        <button type="submit" class="btn auth-btn w-100">Iniciar sesión</button>
       </form>
 
       <div class="text-center mt-4">
-        <p>¿No tenés una cuenta? <a href="<?php echo base_url('register'); ?>" class="auth-link">Registrate</a></p>
+        <p>¿No tenés una cuenta? <a href="<?= base_url('register'); ?>" class="auth-link">Registrate</a></p>
       </div>
     </div>
 
