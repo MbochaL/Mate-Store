@@ -8,9 +8,9 @@ class Home extends BaseController
   {
     return view('/plantillas/header_view')
       . view('/plantillas/nav_view')
-      . view('/contenido/inicio')
-      . view('/contenido/home/vendidos')
-      . view('/contenido/home/categorias')
+      . view('cliente/contenido/inicio')
+      . view('cliente/contenido/home/vendidos')
+      . view('cliente/contenido/home/categorias')
       . view('/plantillas/footer_view');
   }
 
@@ -18,7 +18,7 @@ class Home extends BaseController
   {
     return view('/plantillas/header_view')
       . view('/plantillas/nav_view')
-      . view('/contenido/comercializacion')
+      . view('cliente/contenido/comercializacion')
       . view('/plantillas/footer_view');
   }
 
@@ -26,7 +26,7 @@ class Home extends BaseController
   {
     return view('/plantillas/header_view')
       . view('/plantillas/nav_view')
-      . view('/contenido/contacto')
+      . view('cliente/contenido/contacto')
       . view('/plantillas/footer_view');
   }
 
@@ -34,7 +34,7 @@ class Home extends BaseController
   {
     return view('/plantillas/header_view')
       . view('/plantillas/nav_view')
-      . view('/contenido/quienes_somos')
+      . view('cliente/contenido/quienes_somos')
       . view('/plantillas/footer_view');
   }
 
@@ -42,7 +42,7 @@ class Home extends BaseController
   {
     return view('/plantillas/header_view')
       . view('/plantillas/nav_view')
-      . view('/contenido/terminos_y_condiciones')
+      . view('cliente/contenido/terminos_y_condiciones')
       . view('/plantillas/footer_view');
   }
 }
