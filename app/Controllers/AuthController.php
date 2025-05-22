@@ -26,7 +26,7 @@ class AuthController extends BaseController
             'email_usuario'    => 'required|valid_email|is_unique[usuario.email_usuario]',
             'dni_usuario' => 'required|max_length[8]',
             'direccion_usuario' => 'required|max_length[100]',
-            'pass_usuario'     => 'required|min_length[8]|max_length[300]',
+            'pass_usuario'     => 'required|min_length[8]|max_length[255]',
         ], [
             'email_usuario' => [
                 'is_unique' => 'El correo ya está registrado.',
