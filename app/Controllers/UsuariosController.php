@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ConsultaModel;
 
-class Usuarios_controller extends BaseController
+class UsuariosController extends BaseController
 {
     public function add_consulta()
     {
