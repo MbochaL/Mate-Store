@@ -9,7 +9,6 @@ class ConsultaModel extends Model
     protected $table = 'consulta';
     protected $primaryKey = 'id_consulta';
     protected $useAutoIncrement = true;
-
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
 
@@ -22,6 +21,4 @@ class ConsultaModel extends Model
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
-
-    protected $useTimestamps = false;
 }
