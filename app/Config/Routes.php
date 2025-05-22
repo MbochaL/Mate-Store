@@ -11,6 +11,7 @@ use CodeIgniter\Router\RouteCollection;
 #USUARIO CONTROLLER (GET)
 $routes->get('login', 'AuthController::showLogin');
 $routes->get('register', 'AuthController::showRegister');
+$routes->get('logout', 'AuthController::logout');
 
 #USUARIO CONTROLLER (POST)
 $routes->post('login', 'AuthController::login');
@@ -22,7 +23,7 @@ $routes->post('register', 'AuthController::register');
 $routes->get('/', 'Home::index');
 $routes->get('inicio', 'Home::index');
 $routes->get('contacto', 'Home::contacto');
-$routes->post('contacto', 'Usuarios_controller::add_consulta');
+$routes->post('contacto', 'UsuariosController::add_consulta');
 $routes->get('comercializacion', 'Home::comercializacion');
 $routes->get('quienes-somos', 'Home::quienesSomos');
 $routes->get('terminos-y-condiciones', 'Home::terminosyCondiciones');

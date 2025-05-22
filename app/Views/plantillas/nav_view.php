@@ -72,6 +72,19 @@
     display: inline-block;
   }
 
+  .nav-user-info {
+    color: #f2efbb !important;
+    background-color: #59220e;
+    border: 1px solid #f2efbb;
+    border-radius: 50px;
+    padding: 0.5rem 1.25rem !important;
+    margin-left: 0.5rem;
+    font-weight: 600;
+    cursor: default;
+    text-decoration: none;
+    display: inline-block;
+  }
+
   .nav-access-mate:hover {
     background-color: #fff;
     transform: translateY(-2px);
@@ -152,14 +165,28 @@
         </ul>
 
         <!-- Botones de acción (derecha) -->
-        <ul class="navbar-nav navbar-nav-end">
-          <li class="nav-item">
-            <a class="nav-access-mate" href="<?php echo base_url('register'); ?>">Registrarse</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-access-mate" href="<?php echo base_url('login'); ?>">Iniciar sesión</a>
-          </li>
-        </ul>
+        <?php if (!session('isLogged')) { ?>
+          <ul class="navbar-nav navbar-nav-end">
+            <li class="nav-item">
+              <a class="nav-access-mate" href="<?php echo base_url('register'); ?>">Registrarse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-access-mate" href="<?php echo base_url('login'); ?>">Iniciar sesión</a>
+            </li>
+          </ul>
+        <?php } else { ?>
+          <ul class="navbar-nav navbar-nav-end">
+            <li class="nav-item">
+              <a class="nav-user-info" href="#">
+                <i class="fa-solid fa-user user-icon"></i> <?php echo session("nombre_usuario"); ?> <?php echo session("apellido_usuario"); ?>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-access-mate" href="<?php echo base_url('logout'); ?>">Cerrar Sesión</a>
+            </li>
+          </ul>
+        <?php } ?>
+
 
       </div>
     </div>
