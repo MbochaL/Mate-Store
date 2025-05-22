@@ -4,24 +4,21 @@ namespace app\Models;
 
 use CodeIgniter\Model;
 
-class VentaModel extends Model{
-    protected $table      = 'venta';
+class DetalleVentaModel extends Model
+{
+    protected $table = 'venta';
     protected $primaryKey = 'id_venta';
-
     protected $useAutoIncrement = true;
-
-    protected $returnType     = 'array'; //object
+    protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['id_venta','id_usuario', 'fecha_venta'];
+    protected $allowedFields = [
+        'id_factura',
+        'id_producto',
+        'cantiad_venta',
+        'precio_unitario_venta'
+    ];
 
-    protected bool $allowEmptyInserts = false;
+    protected bool $allowEmptyInserts = true;
     protected bool $updateOnlyChanged = true;
-
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
 }
