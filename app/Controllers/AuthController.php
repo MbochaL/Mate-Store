@@ -92,7 +92,7 @@ class AuthController extends BaseController
             ]);
 
             return $user['id_rol'] == 1
-                ? redirect()->route('admin_index')
+                ? redirect()->route('admin_dashboard')
                 : redirect()->route('/');
         }
 
