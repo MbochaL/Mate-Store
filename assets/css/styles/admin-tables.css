@@ -1,0 +1,53 @@
+.add-boton-table {
+    background-color: #59220e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.add-boton-table:hover {
+    background-color: #491b0c;
+    color: #fff;
+}
+
+.edit-boton-table {
+    background-color: #f2efbb;
+    color: #59220e;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.edit-boton-table:hover {
+    background-color: #e2e0ae;
+    color: #59220e;
+}
+
+.delete-boton-table {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.delete-boton-table:hover {
+    background-color: #b4212f;
+    color: #fff;
+}
+

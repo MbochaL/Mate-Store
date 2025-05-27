@@ -1,0 +1,13 @@
+li strong,
+h1 {
+    color: #59220e;
+    font-weight: 800;
+}
+
+li strong {
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+}

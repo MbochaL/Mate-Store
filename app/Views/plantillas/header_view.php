@@ -13,8 +13,18 @@
   <link rel="stylesheet" href="<?php echo base_url('/assets/css/bootstrap.min.css'); ?>">
 
   <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="<?php echo base_url('/assets/css/style.css'); ?>">
-  <link rel="stylesheet" href="<?php echo base_url('/assets/css/layout.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/nav.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/footer.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/carrusel.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/descatados.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/categorias.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/comercializacion.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/contacto.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/quienes_somos.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/terminos_y_condiciones.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/login.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/register.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/admin-tables.css'); ?>">
 
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">

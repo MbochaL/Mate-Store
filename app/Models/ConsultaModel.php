@@ -13,6 +13,7 @@ class ConsultaModel extends Model
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
+        'id_usuario',
         'nombre_consulta',
         'email_consulta',
         'asunto',

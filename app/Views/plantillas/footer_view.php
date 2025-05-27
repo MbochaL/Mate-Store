@@ -1,118 +1,24 @@
 <style>
-  /* Estilos personalizados para el footer */
-  .footer-mate {
-    background-color: #59220e;
-    color: #fff;
-    position: relative;
-  }
-
-  .footer-mate::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background-color: #f2efbb;
-  }
-
-  .footer-title {
-    color: #f2efbb;
-    font-family: "Gravitas One", cursive;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: 700;
-  }
-
-  .footer-heading {
-    color: #f2efbb;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    position: relative;
-    display: inline-block;
-  }
-
-  .footer-heading::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background-color: #f2efbb;
-  }
-
-  .footer-link {
-    color: #fff !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease;
-    display: inline-block;
-    padding: 3px 0;
-  }
-
-  .footer-link:hover {
-    color: #f2efbb !important;
-    transform: translateX(5px);
-  }
-
-  .footer-social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-decoration: none;
-    margin-right: 15px;
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-  }
-
-  .footer-social-link:hover {
-    color: #f2efbb;
-    text-decoration: none;
-  }
-
-  .footer-social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    width: 32px;
-    height: 32px;
-    transition: all 0.3s ease;
-  }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(242, 239, 187, 0.3);
-  }
-
-  .footer-logo {
-    font-family: 'Georgia', serif;
-    color: #f2efbb;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-
-  .mate-icon {
-    display: inline-block;
-    margin-right: 5px;
-    transform: rotate(-15deg);
-  }
+  
 </style>
 
 <!-- Pie de página -->
 <footer class="footer-mate pt-5 pb-3">
   <div class="container">
-    <div class="row text-center text-md-start">
+    <div class="footer-content">
       <!-- Logo o nombre -->
-      <div class="col-md-3 mb-4">
-        <a class="d-flex align-items-center" href="<?php echo base_url('inicio'); ?>">
-          <img src="<?php echo base_url('/assets/img/logo-mate-store.png'); ?>" style="width: 50px; height: 50px;" alt="logo" />
-          <span class="ms-2 footer-title" style="text-decoration: none;">Mate Store</span>
+      <div>
+        <a class="d-flex align-items-center mb-2" style="text-decoration: none;" href="<?php echo base_url('inicio'); ?>">
+          <img src="<?php echo base_url('/assets/img/logo-mate-store.png'); ?>" class="footer-logo" alt="logo" />
+          <span class="ms-2 footer-title">Mate Store</span>
         </a>
-        <p>La tradición hecha diseño. Productos únicos para compartir buenos momentos.</p>
+        <p>
+          La tradición hecha diseño. Productos únicos para compartir buenos momentos.
+        </p>
       </div>
 
       <!-- Navegación -->
-      <div class="col-md-3 mb-4">
+      <div class="col-md-3 mb-4 footer-box-links">
         <h6 class="footer-heading">NAVEGACIÓN</h6>
         <ul class="list-unstyled">
           <li><a href="<?= base_url('inicio'); ?>" class="footer-link">Inicio</a></li>
@@ -126,24 +32,24 @@
       <!-- Contacto -->
       <div class="col-md-3 mb-4">
         <h6 class="footer-heading">CONTACTO</h6>
-        <p>
-          <i class="bi bi-envelope-fill me-2" style="color: #f2efbb;"></i>
+        <p class="d-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="color: #f2efbb;"></i>
           <a href="mailto:contacto@matestore.com" class="footer-link">contacto@matestore.com</a>
         </p>
-        <p>
-          <i class="bi bi-telephone-fill me-2" style="color: #f2efbb;"></i>
-          <a href="tel:+5491234567890" class="footer-link">+54 9 1234 567890</a>
+        <p class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="color: #f2efbb;"></i>
+          <a href="tel:+5491234567890" class="footer-link">+54.379.415.342647</a>
         </p>
-        <p>
-          <i class="bi bi-geo-alt-fill me-2" style="color: #f2efbb;"></i>
-          Corrientes, Argentina
+        <p class="d-flex align-items-center gap-2">
+          <i class="bi bi-geo-alt-fill" style="color: #f2efbb;"></i>
+          <span class="footer-link">Corrientes,Argentina</span>
         </p>
       </div>
 
       <!-- Redes sociales -->
       <div class="col-md-3 mb-4">
         <h6 class="footer-heading">SEGUINOS</h6>
-        <div class="d-flex flex-wrap">
+        <div class="footer-box-links">
           <a href="https://facebook.com/Mate.store" class="footer-social-link text-center" target="_blank">
             <span class="ml-2 footer-social-icon">
               <i class="fab fa-facebook-f"></i>

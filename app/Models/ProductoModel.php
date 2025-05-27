@@ -19,7 +19,7 @@ class ProductoModel extends Model
         'img_producto',
         'estado_producto',
         'stock_producto',
-        'id_categoria'
+        'id_categoria',
     ];
 
     protected bool $allowEmptyInserts = false;

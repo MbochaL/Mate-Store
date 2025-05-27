@@ -1,0 +1,117 @@
+.bg-custom {
+  background-color: #59220e;
+}
+
+.navbar-brand-mate {
+  color: #f2efbb !important;
+  letter-spacing: 1px;
+  font-family: 'Georgia', serif;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-mate {
+  border-color: rgba(242, 239, 187, 0.5);
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler-mate:focus {
+  box-shadow: 0 0 0 0.25rem rgba(242, 239, 187, 0.25);
+}
+
+.navbar-toggler-icon-mate {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(242, 239, 187, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.nav-link-mate {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link-mate::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #f2efbb;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link-mate:hover {
+  color: #f2efbb !important;
+}
+
+.nav-link-mate:hover::after {
+  width: 70%;
+}
+
+.nav-link-mate.active {
+  color: #f2efbb !important;
+}
+
+.nav-access-mate {
+  color: #59220e !important;
+  background-color: #f2efbb;
+  border-radius: 50px;
+  padding: 0.5rem 1.25rem !important;
+  margin-left: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.nav-user-info {
+  color: #f2efbb !important;
+  background-color: #59220e;
+  border: 1px solid #f2efbb;
+  border-radius: 50px;
+  padding: 0.5rem 1.25rem !important;
+  margin-left: 0.5rem;
+  font-weight: 600;
+  cursor: default;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.nav-access-mate:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse-mate {
+    background-color: #59220e;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid rgba(242, 239, 187, 0.2);
+  }
+
+  .nav-link-mate {
+    padding: 0.75rem 1rem !important;
+    border-radius: 0.25rem;
+  }
+
+  .nav-link-mate:hover {
+    background-color: rgba(242, 239, 187, 0.1);
+  }
+
+  .nav-link-mate::after {
+    display: none;
+  }
+
+  .navbar-nav-end {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(242, 239, 187, 0.2);
+  }
+
+  .nav-access-mate {
+    display: block;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+}

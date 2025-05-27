@@ -1,0 +1,31 @@
+.text-mate-primary {
+    color: #59220e !important;
+}
+
+.text-mate-accent {
+    color: #f2efbb !important;
+}
+
+.bg-mate-primary {
+    background-color: #59220e !important;
+}
+
+.bg-mate-accent {
+    background-color: #f2efbb !important;
+}
+
+.border-mate-primary {
+    border-color: #59220e !important;
+}
+
+.border-mate-accent {
+    border-color: #f2efbb !important;
+}
+
+.team-member {
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    box-shadow: 0 5px 15px rgba(89, 34, 14, 0.2);
+}

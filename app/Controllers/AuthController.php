@@ -6,7 +6,7 @@ use App\Models\UsuarioModel;
 
 class AuthController extends BaseController
 {
-    public function showRegister()
+    public function formulario_registro()
     {
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
@@ -49,14 +49,14 @@ class AuthController extends BaseController
             'dni_usuario'     => $request->getPost('dni_usuario'),
             'direccion_usuario'     => $request->getPost('direccion_usuario'),
             'password_usuario' => password_hash($request->getPost('pass_usuario'), PASSWORD_BCRYPT),
-            'estado_usuario'   => "activo",
+            'estado_usuario'   => 1,
             'id_rol'           => 2,
         ]);
 
         return redirect()->route('login');
     }
 
-    public function showLogin()
+    public function formulario_login()
     {
         return view('plantillas/header_view')
             . view('plantillas/nav_view')

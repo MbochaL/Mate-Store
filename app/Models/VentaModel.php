@@ -4,7 +4,7 @@ namespace app\Models;
 
 use CodeIgniter\Model;
 
-class DetalleVentaModel extends Model
+class VentaModel extends Model
 {
     protected $table = 'venta';
     protected $primaryKey = 'id_venta';
@@ -15,7 +15,7 @@ class DetalleVentaModel extends Model
     protected $allowedFields = [
         'id_factura',
         'id_producto',
-        'cantiad_venta',
+        'cantidad_venta',
         'precio_unitario_venta'
     ];
 
