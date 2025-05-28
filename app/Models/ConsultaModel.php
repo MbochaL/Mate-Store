@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Models;
+namespace app\Models;
 
 use CodeIgniter\Model;
 
 class ConsultaModel extends Model
 {
-    protected $table = 'consulta';
-    protected $primaryKey = 'id_consulta';
-    protected $useAutoIncrement = true;
-    protected $returnType = 'array';
-    protected $useSoftDeletes = false;
+  protected $table = 'consulta';
+  protected $primaryKey = 'id_consulta';
+  protected $useAutoIncrement = true;
+  protected $returnType = 'array';
+  protected $useSoftDeletes = false;
 
-    protected $allowedFields = [
-        'id_usuario',
-        'nombre_consulta',
-        'email_consulta',
-        'asunto',
-        'mensaje_consulta'
-    ];
+  protected $allowedFields = [
+    'id_usuario',
+    'nombre_consulta',
+    'email_consulta',
+    'asunto',
+    'mensaje_consulta'
+  ];
 
-    protected bool $allowEmptyInserts = false;
-    protected bool $updateOnlyChanged = true;
+  protected bool $allowEmptyInserts = false;
+  protected bool $updateOnlyChanged = true;
 }

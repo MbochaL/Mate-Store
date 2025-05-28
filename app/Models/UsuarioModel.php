@@ -1,30 +1,31 @@
 <?php
 
-namespace App\Models;
+namespace app\Models;
 
 use CodeIgniter\Model;
 
 class UsuarioModel extends Model
 {
-    protected $table = 'usuario';
-    protected $primaryKey = 'id_usuario';
-    protected $useAutoIncrement = true;
+  protected $table      = 'usuario';
+  protected $primaryKey = 'id_usuario';
 
-    protected $returnType = 'array';
-    protected $useSoftDeletes = false;
+  protected $useAutoIncrement = true;
 
-    protected $allowedFields = [
-        'apellido_usuario',
-        'nombre_usuario',
-        'telefono_usuario',
-        'email_usuario',
-        'dni_usuario',
-        'direccion_usuario',
-        'password_usuario',
-        'estado_usuario',
-        'id_rol'
-    ];
+  protected $returnType     = 'array'; //object
+  protected $useSoftDeletes = false;
 
-    protected bool $allowEmptyInserts = false;
-    protected bool $updateOnlyChanged = true;
+  protected $allowedFields = [
+    'apellido_usuario',
+    'nombre_usuario',
+    'telefono_usuario',
+    'email_usuario',
+    'dni_usuario',
+    'direccion_usuario',
+    'password_usuario',
+    'estado_usuario',
+    'id_rol'
+  ];
+
+  protected bool $allowEmptyInserts = false;
+  protected bool $updateOnlyChanged = true;
 }
