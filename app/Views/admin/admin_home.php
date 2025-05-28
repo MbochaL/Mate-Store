@@ -1,5 +1,9 @@
-<div style="margin-left:220px; padding:20px;">
-    <div>
-        Hola Soy Admin
-    </div>
+<?php
+$nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apellido_usuario');
+?>
+
+<div class="text-center">
+  <h2 class="mt-5 welcome-title">
+    Bienvenido Administrador <span><?= esc($nombreCompleto) ?></span>
+  </h2>
 </div>

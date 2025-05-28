@@ -46,6 +46,7 @@
 
             <?php if (session()->getFlashdata('mensaje_consulta')) : ?>
               <div class="alert alert-success mt-3">
+                ¡Tu consulta fue enviada con éxito!
                 <?= session()->getFlashdata('mensaje_consulta') ?>
               </div>
             <?php endif; ?>
