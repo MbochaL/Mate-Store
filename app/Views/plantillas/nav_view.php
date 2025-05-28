@@ -24,16 +24,16 @@
         <?php if (session('id_rol') == 1) { ?>
           <ul class="navbar-nav mx-auto align-items-center align-self-center">
             <li class="nav-item">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('productos'); ?>">productos</a>
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('productos'); ?>">Productos</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('usuarios'); ?>">usuarios</a>
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('usuarios'); ?>">Usuarios</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('ventas'); ?>">ventas</a>
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('ventas'); ?>">Ventas</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('consultas'); ?>">consultas</a>
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('consultas'); ?>">Consultas</a>
             </li>
           </ul>
         <?php } else { ?>
