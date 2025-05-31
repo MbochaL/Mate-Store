@@ -52,7 +52,7 @@ class ProductoController extends BaseController
 
     if ($img && $img->isValid() && !$img->hasMoved()) {
       $imgName = $img->getRandomName();
-      $img->move(ROOTPATH . 'assets/uploads', $imgName);
+      $img->move(ROOTPATH . 'assets/upload/', $imgName);
     }
 
     $productoModel->insert([
@@ -113,7 +113,7 @@ class ProductoController extends BaseController
     $img = $this->request->getFile('img_producto');
     if ($img && $img->isValid() && !$img->hasMoved()) {
       $imgName = $img->getRandomName();
-      $img->move(ROOTPATH . 'assets/uploads', $imgName);
+      $img->move(ROOTPATH . 'assets/upload/', $imgName);
       $data['img_producto'] = $imgName;
     }
 

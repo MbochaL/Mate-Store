@@ -1,5 +1,5 @@
 <style>
-  
+
 </style>
 
 <!-- Pie de página -->
@@ -12,7 +12,7 @@
           <img src="<?php echo base_url('/assets/img/logo-mate-store.png'); ?>" class="footer-logo" alt="logo" />
           <span class="ms-2 footer-title">Mate Store</span>
         </a>
-        <p>
+        <p class="mx-4">
           La tradición hecha diseño. Productos únicos para compartir buenos momentos.
         </p>
       </div>
@@ -77,9 +77,6 @@
       <p class="mb-0">© 2025 Mate Store. Todos los derechos reservados.</p>
     </div>
   </div>
-
-  <!-- Bootstrap JS desde CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </footer>
 
 </body>
