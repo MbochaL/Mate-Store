@@ -29,8 +29,15 @@
                     <td><?= esc($usuario['direccion_usuario']) ?></td>
                     <td><?= $usuario['estado_usuario'] ? 'Activo' : 'Inactivo' ?></td>
                     <td>
-                        <a href="<?= base_url('usuarios/editar/' . $usuario['id_usuario']) ?>" class="edit-boton-table">Editar</a>
-                        <a href="<?= base_url('usuarios/eliminar/' . $usuario['id_usuario']) ?>" class="delete-boton-table" onclick="return confirm('¿Eliminar este usuario?')">Eliminar</a>
+                        <a href="<?= base_url('usuarios/ver/' . $usuario['id_usuario']) ?>" class="bi bi-search gap-1 edit-boton-table">
+                            Ver
+                        </a>
+                        <a href="<?= base_url('usuarios/editar/' . $usuario['id_usuario']) ?>" class="edit-boton-table bi bi-pencil-square gap-1">
+                            Editar
+                        </a>
+                        <a href="<?= base_url('usuarios/eliminar/' . $usuario['id_usuario']) ?>" class="delete-boton-table bi bi-trash3 gap-1" onclick="return confirm('¿Eliminar este usuario?')">
+                            Eliminar
+                        </a>
                     </td>
                 </tr>
             <?php endforeach; ?>

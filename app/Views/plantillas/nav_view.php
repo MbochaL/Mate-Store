@@ -24,16 +24,16 @@
         <?php if (session('id_rol') == 1) { ?>
           <ul class="navbar-nav mx-auto align-items-center align-self-center">
             <li class="nav-item">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('productos'); ?>">productos</a>
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('productos'); ?>">Productos</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('usuarios'); ?>">usuarios</a>
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('usuarios'); ?>">Usuarios</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('ventas'); ?>">ventas</a>
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('ventas'); ?>">Ventas</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('consultas'); ?>">consultas</a>
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('consultas'); ?>">Consultas</a>
             </li>
           </ul>
         <?php } else { ?>
@@ -57,27 +57,48 @@
 
 
         <!-- Botones de acción (derecha) -->
-        <?php if (!session('isLogged')) { ?>
-          <ul class="navbar-nav navbar-nav-end">
+        <?php if (!session('isLogged')): ?>
+          <!-- Menú si el usuario no está logueado -->
+          <ul class="navbar-nav navbar-nav-end align-items-center">
             <li class="nav-item">
-              <a class="nav-access-mate" href="<?php echo base_url('register'); ?>">Registrarse</a>
+              <a class="nav-access-mate" href="<?= base_url('register'); ?>">Registrarse</a>
             </li>
             <li class="nav-item">
-              <a class="nav-access-mate" href="<?php echo base_url('login'); ?>">Iniciar sesión</a>
+              <a class="nav-access-mate" href="<?= base_url('login'); ?>">Iniciar sesión</a>
             </li>
           </ul>
-        <?php } else { ?>
-          <ul class="navbar-nav navbar-nav-end">
+        <?php else: ?>
+          <!-- Menú si el usuario está logueado -->
+          <ul class="navbar-nav navbar-nav-end align-items-center">
             <li class="nav-item">
               <a class="nav-user-info" href="#">
-                <i class="fa-solid fa-user user-icon"></i> <?php echo session("nombre_usuario"); ?>
+                <i class="fa-solid fa-user user-icon"></i> <span class="d-xl-inline d-lg-none"><?= session("nombre_usuario"); ?></span>
               </a>
             </li>
+
+            <?php
+            switch (session('id_rol')) {
+              case 1: // Administrador
+            ?>
+              <?php
+                break;
+
+              case 2: // Cliente
+              ?>
+                <li class="nav-item">
+                  <a class="nav-access-mate bi bi-cart4" href="<?= base_url('carrito'); ?>"></a>
+                </li>
+            <?php
+                break;
+            }
+            ?>
+
             <li class="nav-item">
-              <a class="nav-access-mate" href="<?php echo base_url('logout'); ?>">Cerrar Sesión</a>
+              <a class="nav-access-mate" href="<?= base_url('logout'); ?>">Cerrar Sesión</a>
             </li>
           </ul>
-        <?php } ?>
+        <?php endif; ?>
+
       </div>
     </div>
   </nav>

@@ -12,19 +12,40 @@ class ProductoController extends BaseController
         $productoModel = new ProductoModel();
         $data['productos'] = $productoModel->findAll();
 
-        return view('plantillas/header_view') 
-        . view('plantillas/nav_view') 
-        . view('admin/productos/lista-productos', $data);
+        return view('plantillas/header_view')
+            . view('plantillas/nav_view')
+            . view('admin/productos/lista-productos', $data);
     }
+
+    public function ver_producto($id)
+    {
+        $productoModel = new \App\Models\ProductoModel();
+
+        $producto = $productoModel
+            ->join('categoria', 'categoria.id_categoria = producto.id_categoria')
+            ->select('producto.*, categoria.nombre_categoria')
+            ->find($id);
+
+        if (!$producto) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Producto no encontrado");
+        }
+
+        $data['producto'] = $producto;
+
+        return view('plantillas/header_view')
+            . view('plantillas/nav_view')
+            . view('admin/productos/detalle-producto', $data);
+    }
+
 
     public function crear_producto()
     {
         $categoriaModel = new CategoriaModel();
         $data['categorias'] = $categoriaModel->findAll();
 
-        return view('plantillas/header_view') 
-        . view('plantillas/nav_view') 
-        . view('admin/productos/crear-producto', $data);
+        return view('plantillas/header_view')
+            . view('plantillas/nav_view')
+            . view('admin/productos/crear-producto', $data);
     }
 
     public function guardar_producto()
@@ -52,7 +73,7 @@ class ProductoController extends BaseController
 
         if ($img && $img->isValid() && !$img->hasMoved()) {
             $imgName = $img->getRandomName();
-            $img->move(ROOTPATH . 'public/uploads/', $imgName);
+            $img->move(ROOTPATH . 'assets/upload/', $imgName);
         }
 
         $productoModel->insert([
@@ -76,9 +97,9 @@ class ProductoController extends BaseController
         $data['producto'] = $productoModel->find($id);
         $data['categorias'] = $categoriaModel->findAll();
 
-        return view('plantillas/header_view') 
-        . view('plantillas/nav_view') 
-        . view('admin/productos/editar-producto', $data);
+        return view('plantillas/header_view')
+            . view('plantillas/nav_view')
+            . view('admin/productos/editar-producto', $data);
     }
 
     public function actualizar_producto($id)
@@ -113,7 +134,7 @@ class ProductoController extends BaseController
         $img = $this->request->getFile('img_producto');
         if ($img && $img->isValid() && !$img->hasMoved()) {
             $imgName = $img->getRandomName();
-            $img->move(ROOTPATH . 'public/uploads/', $imgName);
+            $img->move(ROOTPATH . 'assets/upload/', $imgName);
             $data['img_producto'] = $imgName;
         }
 
