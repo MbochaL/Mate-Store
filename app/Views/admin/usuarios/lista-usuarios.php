@@ -5,42 +5,50 @@
         <div class="alert alert-success"><?= session()->getFlashdata('mensaje') ?></div>
     <?php endif; ?>
 
-    <a href="<?= base_url('usuarios/crear') ?>" class="add-boton-table">Nuevo Usuario</a>
+    <a href="<?= base_url('usuarios/crear') ?>" class="add-boton-table mb-3 d-inline-block">Nuevo Usuario</a>
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>DNI</th>
-                <th>Teléfono</th>
-                <th>Dirección</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($usuarios as $usuario): ?>
+    <div class="table-responsive">
+        <table class="table table-bordered table-sm text-center align-middle">
+            <thead class="table-secondary">
                 <tr>
-                    <td><?= esc($usuario['nombre_usuario'] . ' ' . $usuario['apellido_usuario']) ?></td>
-                    <td><?= esc($usuario['email_usuario']) ?></td>
-                    <td><?= esc($usuario['dni_usuario']) ?></td>
-                    <td><?= esc($usuario['telefono_usuario']) ?></td>
-                    <td><?= esc($usuario['direccion_usuario']) ?></td>
-                    <td><?= $usuario['estado_usuario'] ? 'Activo' : 'Inactivo' ?></td>
-                    <td>
-                        <a href="<?= base_url('usuarios/ver/' . $usuario['id_usuario']) ?>" class="bi bi-search gap-1 edit-boton-table">
-                            Ver
-                        </a>
-                        <a href="<?= base_url('usuarios/editar/' . $usuario['id_usuario']) ?>" class="edit-boton-table bi bi-pencil-square gap-1">
-                            Editar
-                        </a>
-                        <a href="<?= base_url('usuarios/eliminar/' . $usuario['id_usuario']) ?>" class="delete-boton-table bi bi-trash3 gap-1" onclick="return confirm('¿Eliminar este usuario?')">
-                            Eliminar
-                        </a>
-                    </td>
+                    <th>Nombre</th>
+                    <th class="d-none d-lg-table-cell">Email</th>
+                    <th>Rol</th>
+                    <th class="d-none d-md-table-cell">DNI</th>
+                    <th class="d-none d-lg-table-cell">Teléfono</th>
+                    <th class="d-none d-lg-table-cell">Dirección</th>
+                    <th class="d-none d-lg-table-cell">Estado</th>
+                    <th>Acciones</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($usuarios as $usuario): ?>
+                    <tr>
+                        <td><?= esc($usuario['nombre_usuario'] . ' ' . $usuario['apellido_usuario']) ?></td>
+                        <td class="d-none d-lg-table-cell"><?= esc($usuario['email_usuario']) ?></td>
+                        <td><?= esc($usuario['id_rol']) === "1" ? "Admin" : "Cliente" ?></td>
+                        <td class="d-none d-md-table-cell"><?= esc($usuario['dni_usuario']) ?></td>
+                        <td class="d-none d-lg-table-cell"><?= esc($usuario['telefono_usuario']) ?></td>
+                        <td class="d-none d-lg-table-cell"><?= esc($usuario['direccion_usuario']) ?></td>
+                        <td class="d-none d-lg-table-cell"><?= $usuario['estado_usuario'] ? 'Activo' : 'Inactivo' ?></td>
+                        <td>
+                            <div class="d-flex flex-wrap justify-content-start md-justify-content-center gap-1">
+                                <a href="<?= base_url('usuarios/ver/' . $usuario['id_usuario']) ?>" class="bi bi-search gap-1 edit-boton-table d-flex align-items-center">
+                                    <span class="d-none d-md-inline">Ver</span>
+                                </a>
+                                <a href="<?= base_url('usuarios/editar/' . $usuario['id_usuario']) ?>" class="edit-boton-table bi bi-pencil-square gap-1 d-flex align-items-center">
+                                    <span class="d-none d-md-inline">Editar</span>
+                                </a>
+                                <?php if ($usuario['id_rol'] != 1): ?>
+                                    <a href="<?= base_url('usuarios/eliminar/' . $usuario['id_usuario']) ?>" class="delete-boton-table bi bi-trash3 gap-1 d-flex align-items-center" onclick="return confirm('¿Eliminar este usuario?')">
+                                        <span class="d-none d-md-inline">Eliminar</span>
+                                    </a>
+                                <?php endif; ?>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </div>

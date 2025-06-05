@@ -6,37 +6,39 @@
     <?php endif; ?>
 
     <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead>
-                <tr class="table-secondary">
+        <table class="table table-bordered table-sm text-center align-middle">
+            <thead class="table-secondary">
+                <tr>
                     <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Asunto</th>
+                    <th class="d-none d-lg-table-cell">Email</th>
+                    <th class="d-none d-md-table-cell">Asunto</th>
                     <th>Usuario Registrado</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($consultas as $consulta): ?>
-                    <tr class="align-content-center">
-                        <td scope="row" class="align-content-center"><?= esc($consulta['nombre_consulta']) ?></td>
-                        <td scope="row" class="align-content-center"><?= esc($consulta['email_consulta']) ?></td>
-                        <td scope="row" class="align-content-center"><?= esc($consulta['asunto']) ?></td>
-                        <td scope="row" class="align-content-center">
+                    <tr>
+                        <td><?= esc($consulta['nombre_consulta']) ?></td>
+                        <td class="d-none d-lg-table-cell"><?= esc($consulta['email_consulta']) ?></td>
+                        <td class="d-none d-md-table-cell"><?= esc($consulta['asunto']) ?></td>
+                        <td>
                             <?= $consulta['nombre_usuario'] ?? 'Anónimo' ?>
                             <?= isset($consulta['apellido_usuario']) ? $consulta['apellido_usuario'] : '' ?>
                         </td>
-                        <td scope="row" class="align-content-center">
-                            <a href="<?= base_url('consultas/ver/' . $consulta['id_consulta']) ?>" class="edit-boton-table bi bi-search gap-1">
-                                <span class="d-none d-lg-inline"> Ver</span>
-                            </a>
-                            <a href="<?= base_url('consultas/eliminar/' . $consulta['id_consulta']) ?>" class="delete-boton-table bi bi-trash3 gap-1" onclick="return confirm('¿Eliminar esta consulta?')">
-                                <span class="d-none d-lg-inline"> Eliminar</span>
-                            </a>
+                        <td>
+                            <div class="d-flex flex-wrap justify-content-center gap-1">
+                                <a href="<?= base_url('consultas/ver/' . $consulta['id_consulta']) ?>" class="edit-boton-table bi bi-search gap-1 d-flex align-items-center">
+                                    <span class="d-none d-lg-inline">Ver</span>
+                                </a>
+                                <a href="<?= base_url('consultas/eliminar/' . $consulta['id_consulta']) ?>" class="delete-boton-table bi bi-trash3 gap-1 d-flex align-items-center" onclick="return confirm('¿Eliminar esta consulta?')">
+                                    <span class="d-none d-lg-inline">Eliminar</span>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-</div>  
+</div>
