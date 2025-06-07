@@ -12,6 +12,7 @@ class ProductoController extends BaseController
     $productoModel = new ProductoModel();
     $data['productos'] = $productoModel->findAll();
 
+<<<<<<< HEAD
     return view('plantillas/header_view')
       . view('plantillas/nav_view')
       . view('admin/productos/lista-productos', $data);
@@ -53,6 +54,42 @@ class ProductoController extends BaseController
     if ($img && $img->isValid() && !$img->hasMoved()) {
       $imgName = $img->getRandomName();
       $img->move(ROOTPATH . 'assets/upload/', $imgName);
+=======
+        return view('plantillas/header_view')
+            . view('plantillas/nav_view')
+            . view('admin/productos/lista-productos', $data);
+    }
+
+    public function ver_producto($id)
+    {
+        $productoModel = new \App\Models\ProductoModel();
+
+        $producto = $productoModel
+            ->join('categoria', 'categoria.id_categoria = producto.id_categoria')
+            ->select('producto.*, categoria.nombre_categoria')
+            ->find($id);
+
+        if (!$producto) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Producto no encontrado");
+        }
+
+        $data['producto'] = $producto;
+
+        return view('plantillas/header_view')
+            . view('plantillas/nav_view')
+            . view('admin/productos/detalle-producto', $data);
+    }
+
+
+    public function crear_producto()
+    {
+        $categoriaModel = new CategoriaModel();
+        $data['categorias'] = $categoriaModel->findAll();
+
+        return view('plantillas/header_view')
+            . view('plantillas/nav_view')
+            . view('admin/productos/crear-producto', $data);
+>>>>>>> origin/main
     }
 
     $productoModel->insert([
@@ -81,9 +118,16 @@ class ProductoController extends BaseController
       . view('admin/productos/editar-producto', $data);
   }
 
+<<<<<<< HEAD
   public function actualizar_producto($id)
   {
     $productoModel = new ProductoModel();
+=======
+        if ($img && $img->isValid() && !$img->hasMoved()) {
+            $imgName = $img->getRandomName();
+            $img->move(ROOTPATH . 'assets/upload/', $imgName);
+        }
+>>>>>>> origin/main
 
     $validation = \Config\Services::validation();
 
@@ -110,11 +154,20 @@ class ProductoController extends BaseController
       'id_categoria'         => $this->request->getPost('id_categoria'),
     ];
 
+<<<<<<< HEAD
     $img = $this->request->getFile('img_producto');
     if ($img && $img->isValid() && !$img->hasMoved()) {
       $imgName = $img->getRandomName();
       $img->move(ROOTPATH . 'assets/upload/', $imgName);
       $data['img_producto'] = $imgName;
+=======
+        $data['producto'] = $productoModel->find($id);
+        $data['categorias'] = $categoriaModel->findAll();
+
+        return view('plantillas/header_view')
+            . view('plantillas/nav_view')
+            . view('admin/productos/editar-producto', $data);
+>>>>>>> origin/main
     }
 
     $productoModel->update($id, $data);
@@ -127,6 +180,41 @@ class ProductoController extends BaseController
     $productoModel = new ProductoModel();
     $productoModel->delete($id);
 
+<<<<<<< HEAD
     return redirect()->to('/productos')->with('mensaje', 'Producto eliminado correctamente');
   }
+=======
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('validation', $validation->getErrors());
+        }
+
+        $data = [
+            'nombre_producto'      => $this->request->getPost('nombre_producto'),
+            'descripcion_producto' => $this->request->getPost('descripcion_producto'),
+            'precio_producto'      => $this->request->getPost('precio_producto'),
+            'stock_producto'       => $this->request->getPost('stock_producto'),
+            'estado_producto'      => $this->request->getPost('estado_producto'),
+            'id_categoria'         => $this->request->getPost('id_categoria'),
+        ];
+
+        $img = $this->request->getFile('img_producto');
+        if ($img && $img->isValid() && !$img->hasMoved()) {
+            $imgName = $img->getRandomName();
+            $img->move(ROOTPATH . 'assets/upload/', $imgName);
+            $data['img_producto'] = $imgName;
+        }
+
+        $productoModel->update($id, $data);
+
+        return redirect()->to('/productos')->with('mensaje', 'Producto actualizado correctamente');
+    }
+
+    public function eliminar_producto($id)
+    {
+        $productoModel = new ProductoModel();
+        $productoModel->delete($id);
+
+        return redirect()->to('/productos')->with('mensaje', 'Producto eliminado correctamente');
+    }
+>>>>>>> origin/main
 }

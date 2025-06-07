@@ -35,6 +35,12 @@
             <li class="nav-item text-center">
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('consultas'); ?>">Consultas</a>
             </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-mate text-white fw-medium hidden md:block" href="<?php echo base_url('facturas'); ?>">facturas</a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('categorias'); ?>">categorias</a>
+            </li>
           </ul>
         <?php } else { ?>
           <ul class="navbar-nav mx-auto align-items-center align-self-center">
@@ -70,31 +76,36 @@
         <?php else: ?>
           <!-- Menú si el usuario está logueado -->
           <ul class="navbar-nav navbar-nav-end align-items-center">
-            <li class="nav-item">
-              <a class="nav-user-info" href="#">
-                <i class="fa-solid fa-user user-icon"></i> <span class="d-xl-inline d-lg-none"><?= session("nombre_usuario"); ?></span>
-              </a>
-            </li>
+            <div class="d-flex align-items-center justify-content-center gap-1 gap-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-user-info" href="#">
+                  <i class="fa-solid fa-user user-icon d-xl-inline d-lg-none"></i> <span><?= session("nombre_usuario"); ?></span>
+                </a>
+              </li>
 
-            <?php
-            switch (session('id_rol')) {
-              case 1: // Administrador
-            ?>
               <?php
-                break;
-
-              case 2: // Cliente
+              switch (session('id_rol')) {
+                case 1: // Administrador
               ?>
-                <li class="nav-item">
-                  <a class="nav-access-mate bi bi-cart4" href="<?= base_url('carrito'); ?>"></a>
-                </li>
-            <?php
-                break;
-            }
-            ?>
+                <?php
+                  break;
+
+                case 2: // Cliente
+                ?>
+                  <li class="nav-item">
+                    <a class="nav-access-mate bi bi-cart4" href="<?= base_url('carrito'); ?>"></a>
+                  </li>
+              <?php
+                  break;
+              }
+              ?>
+            </div>
 
             <li class="nav-item">
-              <a class="nav-access-mate" href="<?= base_url('logout'); ?>">Cerrar Sesión</a>
+              <a class="nav-access-mate" href="<?= base_url('logout'); ?>">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <span class="responsive-text">Cerrar Sesión</span>
+              </a>
             </li>
           </ul>
         <?php endif; ?>

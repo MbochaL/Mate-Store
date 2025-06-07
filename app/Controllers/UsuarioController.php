@@ -17,6 +17,28 @@ class UsuarioController extends BaseController
             . view('admin/usuarios/lista-usuarios', $data);
     }
 
+    public function ver_usuario($id)
+    {
+        $userModel = new \App\Models\UsuarioModel();
+        $rolModel  = new \App\Models\RolModel();
+
+        $usuario = $userModel
+            ->join('rol', 'rol.id_rol = usuario.id_rol')
+            ->select('usuario.*, rol.nombre_rol')
+            ->find($id);
+
+        if (!$usuario) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Usuario no encontrado");
+        }
+
+        $data['usuario'] = $usuario;
+
+        return view('plantillas/header_view')
+            . view('plantillas/nav_view')
+            . view('admin/usuarios/detalle-usuario', $data);
+    }
+
+
     public function crear_usuario()
     {
         $rolModel = new RolModel();
