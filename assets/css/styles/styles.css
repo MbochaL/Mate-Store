@@ -1,9 +1,9 @@
 .responsive-text {
-    display: inline-block;
+  display: inline-block;
 }
 
-@media (min-width: 1000px) and (max-width: 1200px) {
-    .responsive-text {
-        display: none;
-    }
+@media (min-width: 992px) and (max-width: 1200px) {
+  .responsive-text {
+    display: none;
+  }
 }

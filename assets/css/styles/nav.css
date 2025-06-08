@@ -5,7 +5,7 @@
 .navbar-brand-mate {
   color: #f2efbb !important;
   letter-spacing: 1px;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   transition: all 0.3s ease;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .nav-link-mate::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;

@@ -1,58 +1,77 @@
 .add-boton-table {
-    background-color: #59220e;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-    text-decoration: none;
+  background-color: #59220e;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .add-boton-table:hover {
-    background-color: #491b0c;
-    color: #fff;
+  background-color: #491b0c;
+  color: #fff;
 }
 
 .edit-boton-table {
-    background-color: #f2efbb;
-    color: #59220e;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-right: 5px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-    text-decoration: none;
+  background-color: #f2efbb;
+  color: #59220e;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .edit-boton-table:hover {
-    background-color: #e2e0ae;
-    color: #59220e;
+  background-color: #e2e0ae;
+  color: #59220e;
 }
 
 .delete-boton-table {
-    background-color: #dc3545;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-    text-decoration: none;
+  background-color: #dc3545;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .delete-boton-table:hover {
-    background-color: #b4212f;
-    color: #fff;
+  background-color: #b4212f;
+  color: #fff;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .admin-card {
-    background-color: #491b0c;
-    color: #e2e0ae;
-    font-weight: 600;
+  animation: fadeInUp 0.8s;
+  animation-fill-mode: ease forwards;
+  background-color: #491b0c;
+  color: #e2e0ae;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(89, 34, 14, 0.2);
 }
