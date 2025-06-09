@@ -7,87 +7,37 @@
     </div>
 
     <div class="row g-4 justify-content-md-center">
-      <!-- Producto Mate -->
-      <div class="col-lg-4 col-md-6">
-        <div class="featured-product">
-          <div class="product-image-container">
-            <span class="product-tag">Destacado</span>
-            <img src="<?php echo base_url('/assets/img/mate-imperial.jpg') ?>" alt="Mate Imperial" class="product-image">
-          </div>
-          <div class="product-content">
-            <h3 class="product-title">Mate Imperial Premium</h3>
-            <p class="product-description">Mate artesanal de calabaza forrado en cuero con detalles en alpaca. Diseño tradicional argentino de la más alta calidad.</p>
-
-            <div class="product-meta">
-              <div class="product-price-container">
-                <span class="product-price">$35.000</span>
-              </div>
+      <?php foreach ($destacados as $item): ?>
+        <div class="col-lg-4 col-md-6">
+          <div class="featured-product">
+            <div class="product-image-container">
+              <span class="product-tag"><?= esc($item['categoria']) ?></span>
+              <img src="<?= base_url('assets/uploads/' . $item['producto']['img_producto']) ?>"
+                alt="<?= esc($item['producto']['nombre_producto']) ?>" class="product-image">
             </div>
+            <div class="product-content">
+              <h3 class="product-title"><?= esc($item['producto']['nombre_producto']) ?></h3>
+              <p class="product-description"><?= esc($item['producto']['descripcion_producto']) ?></p>
 
-            <div class="product-actions mt-3">
-              <a href="<?php echo base_url('inicio'); ?>" class="product-btn">
-                Comprar ahora <i class="bi bi-arrow-right btn-icon"></i>
-              </a>
+              <div class="product-meta">
+                <div class="product-price-container">
+                  <span class="product-price">$<?= number_format($item['producto']['precio_producto'], 2, ',', '.') ?></span>
+                </div>
+              </div>
+
+              <div class="product-actions mt-3">
+                <a href="<?= base_url('productos/ver/' . $item['producto']['id_producto']) ?>" class="product-btn">
+                  Comprar ahora <i class="bi bi-arrow-right btn-icon"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Producto Bombilla -->
-      <div class="col-lg-4 col-md-6">
-        <div class="featured-product">
-          <div class="product-image-container">
-            <span class="product-tag">Premium</span>
-            <img src="<?php echo base_url('/assets/img/bombilla-mate-silver.jpg') ?>" alt="Bombilla Mate Silver" class="product-image">
-          </div>
-          <div class="product-content">
-            <h3 class="product-title">Bombilla Mate Silver</h3>
-            <p class="product-description">Bombilla de alpaca con filtro desmontable. Diseño elegante con acabado plateado que no altera el sabor de tu mate.</p>
-
-            <div class="product-meta">
-              <div class="product-price-container">
-                <span class="product-price">$9.000</span>
-              </div>
-            </div>
-
-            <div class="product-actions mt-3">
-              <a href="<?php echo base_url('inicio'); ?>" class="product-btn">
-                Comprar ahora <i class="bi bi-arrow-right btn-icon"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto Termo -->
-      <div class="col-lg-4 col-md-6">
-        <div class="featured-product">
-          <div class="product-image-container">
-            <span class="product-tag">Calidad</span>
-            <img src="<?php echo base_url('/assets/img/termo.jpg') ?>" alt="Termo de 1L" class="product-image">
-          </div>
-          <div class="product-content">
-            <h3 class="product-title">Termo Stanley 1L</h3>
-            <p class="product-description">Termo de acero inoxidable que mantiene la temperatura por hasta 24 horas. Ideal para tus mates en cualquier momento y lugar.</p>
-
-            <div class="product-meta">
-              <div class="product-price-container">
-                <span class="product-price">$30.000</span>
-              </div>
-            </div>
-
-            <div class="product-actions mt-3">
-              <a href="<?php echo base_url('inicio'); ?>" class="product-btn">
-                Comprar ahora <i class="bi bi-arrow-right btn-icon"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
 
     <div class="view-all-container">
-      <a href="<?php echo base_url('inicio'); ?>" class="view-all-btn">
+      <a href="<?= base_url('catalogo'); ?>" class="view-all-btn">
         Ver todos los productos <i class="bi bi-grid view-all-icon"></i>
       </a>
     </div>

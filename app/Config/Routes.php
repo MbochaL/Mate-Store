@@ -66,6 +66,9 @@ $routes->get('contacto', 'ClientController::contacto');
 $routes->get('comercializacion', 'ClientController::comercializacion');
 $routes->get('quienes-somos', 'ClientController::quienesSomos');
 $routes->get('terminos-y-condiciones', 'ClientController::terminosyCondiciones');
+$routes->get('catalogo', 'ClientController::catalogo');
+$routes->get('catalogo/categoria/(:segment)', 'ClientController::catalogoPorCategoria/$1');
+$routes->get('producto/(:num)', 'ClientController::detalleProducto/$1');
 
 // Admin route
 $routes->get('admin_dashboard', 'AdminController::AdminDashboard');

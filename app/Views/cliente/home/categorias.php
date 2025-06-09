@@ -36,7 +36,7 @@
               </div>
               <div class="category-action column-gap-3">
                 <span class="product-count">45 productos</span>
-                <a href="<?php echo base_url('inicio'); ?>" class="category-btn">
+                <a href="<?= base_url('catalogo/categoria/Mate') ?>" class="category-btn">
                   Ver todos <i class="bi bi-arrow-right btn-icon"></i>
                 </a>
               </div>
@@ -76,7 +76,7 @@
               </div>
               <div class="category-action column-gap-3">
                 <span class="product-count">28 productos</span>
-                <a href="<?php echo base_url('inicio'); ?>" class="category-btn">
+                <a href="<?= base_url('catalogo/categoria/Bombilla') ?>" class="category-btn">
                   Ver todos <i class="bi bi-arrow-right btn-icon"></i>
                 </a>
               </div>
@@ -116,7 +116,7 @@
               </div>
               <div class="category-action column-gap-3">
                 <span class="product-count">32 productos</span>
-                <a href="<?php echo base_url('inicio'); ?>" class="category-btn">
+                <a href="<?= base_url('catalogo/categoria/Termo'); ?>" class="category-btn">
                   Ver todos <i class="bi bi-arrow-right btn-icon"></i>
                 </a>
               </div>
@@ -125,12 +125,6 @@
           <div class="category-decoration"></div>
         </div>
       </div>
-    </div>
-
-    <div class="view-all-container">
-      <a href="<?php echo base_url('inicio'); ?>" class="view-all-btn">
-        Ver todas las categorías <i class="bi bi-grid view-all-icon"></i>
-      </a>
     </div>
   </div>
 </section>
