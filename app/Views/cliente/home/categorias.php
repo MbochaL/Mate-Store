@@ -52,7 +52,6 @@
           <div class="category-main">
             <div class="category-image-container">
               <img src="<?php echo base_url('/assets/img/bombilla-mate-silver.jpg'); ?>" alt="Bombillas" class="category-image">
-              <span class="category-badge">Artesanal</span>
             </div>
             <div class="category-content">
               <div class="category-icon">
@@ -92,7 +91,6 @@
           <div class="category-main">
             <div class="category-image-container">
               <img src="<?php echo base_url('/assets/img/termo.jpg'); ?>" alt="Termos" class="category-image">
-              <span class="category-badge">Premium</span>
             </div>
             <div class="category-content">
               <div class="category-icon">

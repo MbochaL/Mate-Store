@@ -26,7 +26,7 @@
               </div>
 
               <div class="product-actions mt-3">
-                <a href="<?= base_url('productos/ver/' . $item['producto']['id_producto']) ?>" class="product-btn">
+                <a href="<?= base_url('producto/' . $item['producto']['id_producto']) ?>" class="product-btn">
                   Comprar ahora <i class="bi bi-arrow-right btn-icon"></i>
                 </a>
               </div>
