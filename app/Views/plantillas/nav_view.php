@@ -50,8 +50,11 @@
             <li class="nav-item text-center">
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('quienes-somos'); ?>">¿Quiénes Somos?</a>
             </li>
-            <li class="nav-item text-center">
+            <!-- <li class="nav-item text-center">
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('terminos-y-condiciones'); ?>">Términos y Condiciones</a>
+            </li> -->
+            <li class="nav-item text-center">
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('catalogo'); ?>">Productos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('contacto'); ?>">Contacto</a>

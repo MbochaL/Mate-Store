@@ -17,25 +17,25 @@
           <div class="carousel-item active">
             <img src="<?php echo base_url('/assets/img/carousel1.jpg') ?>" class="carousel-image" alt="Colección de Mates Premium">
             <div class="carousel-caption">
+              <h6 class="bg-warning text-dark rounded w-30 p-2">Proximamente</h6>
               <h2>Colección de Mates Premium</h2>
               <p>Descubrí nuestra selección de mates artesanales de la más alta calidad</p>
-              <a href="<?php echo base_url('inicio'); ?>" class="carousel-btn z-3 position-relative">Ver colección</a>
             </div>
           </div>
           <div class="carousel-item">
             <img src="<?php echo base_url('/assets/img/carousel2.jpg') ?>" class="carousel-image" alt="Sets Materos Completos">
             <div class="carousel-caption">
+              <h6 class="bg-warning text-dark rounded w-30 p-2">Proximamente</h6>
               <h2>Sets Materos Completos</h2>
               <p>Todo lo que necesitás para disfrutar del mejor mate en un solo lugar</p>
-              <a href="<?php echo base_url('inicio'); ?>" class="carousel-btn z-3 position-relative">Ver sets</a>
             </div>
           </div>
           <div class="carousel-item">
             <img src="<?php echo base_url('/assets/img/carousel3.jpg') ?>" class="carousel-image" alt="Ofertas Especiales">
             <div class="carousel-caption">
+              <h6 class="bg-warning text-dark rounded w-30 p-2">Proximamente</h6>
               <h2>Ofertas Especiales</h2>
               <p>Aprovechá nuestros descuentos exclusivos por tiempo limitado</p>
-              <a href="<?php echo base_url('inicio'); ?>" class="carousel-btn z-3 position-relative">Ver ofertas</a>
             </div>
           </div>
         </div>

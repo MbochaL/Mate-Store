@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/quienes_somos.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/terminos_y_condiciones.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/login.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/detalle-producto.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/register.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('/assets/css/styles/admin-tables.css?v=<?= time(); ?>'); ?>">
 

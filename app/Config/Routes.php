@@ -37,7 +37,7 @@ $routes->get('usuarios/eliminar/(:num)', 'UsuarioController::eliminar_usuario/$1
 # VENTAS ROUTES
 $routes->get('ventas', 'VentaController::lista_ventas');
 $routes->get('ventas/crear', 'VentaController::crear_venta');
-$routes->post('ventas/guardar', 'VentaController::guardar_venta');
+$routes->get('ventas/guardar', 'VentaController::guardar_venta');
 $routes->get('ventas/ver/(:num)', 'VentaController::detalle_venta/$1');
 $routes->get('ventas/eliminar/(:num)', 'VentaController::eliminar_venta/$1');
 
@@ -66,6 +66,17 @@ $routes->get('contacto', 'ClientController::contacto');
 $routes->get('comercializacion', 'ClientController::comercializacion');
 $routes->get('quienes-somos', 'ClientController::quienesSomos');
 $routes->get('terminos-y-condiciones', 'ClientController::terminosyCondiciones');
+$routes->get('catalogo', 'ClientController::catalogo');
+$routes->get('catalogo/categoria/(:segment)', 'ClientController::catalogoPorCategoria/$1');
+$routes->get('producto/(:num)', 'ClientController::detalleProducto/$1');
+$routes->get('factura/ver/(:num)', 'FacturaController::mostrar_factura/$1');
 
 // Admin route
 $routes->get('admin_dashboard', 'AdminController::AdminDashboard');
+
+// CARRITO ROUTES
+$routes->get('carrito', 'CarritoController::ver_carrito');
+$routes->post('carrito/agregar_carrito', 'CarritoController::agregar_carrito');
+$routes->get('carrito/vaciar_carrito', 'CarritoController::vaciar_carrito');
+$routes->get('carrito/eliminar_producto/(:any)', 'CarritoController::eliminar_producto/$1');
+$routes->get('carrito/modificar_cantidad/(:segment)/(:any)', 'CarritoController::modificar_cantidad/$1/$2');
