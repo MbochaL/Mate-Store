@@ -16,12 +16,12 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($detalles as $linea): ?>
+            <?php foreach ($venta as $linea): ?>
                 <tr>
                     <td><?= esc($linea['nombre_producto']) ?></td>
-                    <td><?= $linea['cantidad_venta'] ?></td>
-                    <td>$<?= number_format($linea['precio_venta'], 2, ',', '.') ?></td>
-                    <td>$<?= number_format($linea['cantidad_venta'] * $linea['precio_venta'], 2, ',', '.') ?></td>
+                    <td><?= esc($linea['cantidad_venta']) ?></td>
+                    <td>$<?= number_format($linea['precio_unitario_venta'], 2, ',', '.') ?></td>
+                    <td>$<?= number_format($linea['cantidad_venta'] * $linea['precio_unitario_venta'], 2, ',', '.') ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

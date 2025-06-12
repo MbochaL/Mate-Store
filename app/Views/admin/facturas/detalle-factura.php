@@ -20,8 +20,8 @@
                 <tr>
                     <td><?= esc($venta['nombre_producto']) ?></td>
                     <td><?= $venta['cantidad_venta'] ?></td>
-                    <td>$<?= number_format($venta['precio_venta'], 2, ',', '.') ?></td>
-                    <td>$<?= number_format($venta['cantidad_venta'] * $venta['precio_venta'], 2, ',', '.') ?></td>
+                    <td>$<?= number_format($venta['precio_unitario_venta'], 2, ',', '.') ?></td>
+                    <td>$<?= number_format($venta['cantidad_venta'] * $venta['precio_unitario_venta'], 2, ',', '.') ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

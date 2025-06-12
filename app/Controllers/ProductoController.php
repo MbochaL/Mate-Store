@@ -37,7 +37,6 @@ class ProductoController extends BaseController
             . view('admin/productos/detalle-producto', $data);
     }
 
-
     public function crear_producto()
     {
         $categoriaModel = new CategoriaModel();
@@ -51,7 +50,6 @@ class ProductoController extends BaseController
     public function guardar_producto()
     {
         $productoModel = new ProductoModel();
-
         $validation = \Config\Services::validation();
 
         $validation->setRules([
@@ -73,7 +71,7 @@ class ProductoController extends BaseController
 
         if ($img && $img->isValid() && !$img->hasMoved()) {
             $imgName = $img->getRandomName();
-            $img->move(ROOTPATH . 'assets/upload/', $imgName);
+            $img->move(ROOTPATH . 'assets/uploads/', $imgName);
         }
 
         $productoModel->insert([
@@ -104,9 +102,8 @@ class ProductoController extends BaseController
 
     public function actualizar_producto($id)
     {
-        $productoModel = new ProductoModel();
-
         $validation = \Config\Services::validation();
+        $productoModel = new ProductoModel();
 
         $validation->setRules([
             'nombre_producto'       => 'required|max_length[255]',
@@ -134,7 +131,7 @@ class ProductoController extends BaseController
         $img = $this->request->getFile('img_producto');
         if ($img && $img->isValid() && !$img->hasMoved()) {
             $imgName = $img->getRandomName();
-            $img->move(ROOTPATH . 'assets/upload/', $imgName);
+            $img->move(ROOTPATH . 'assets/uploads/', $imgName);
             $data['img_producto'] = $imgName;
         }
 

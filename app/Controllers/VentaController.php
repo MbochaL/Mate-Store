@@ -36,61 +36,21 @@ class VentaController extends BaseController
             . view('admin/ventas/crear-venta', $data);
     }
 
-    public function guardar_venta()
-    {
-        $facturaModel = new FacturaModel();
-        $ventaModel = new VentaModel();
-        $request = $this->request;
-
-        $productos  = $request->getPost('id_producto');
-        $cantidades = $request->getPost('cantidad');
-        $precios    = $request->getPost('precio');
-
-        $total = 0;
-
-        // Calcular total
-        for ($i = 0; $i < count($productos); $i++) {
-            if (!empty($productos[$i]) && $cantidades[$i] > 0) {
-                $subtotal = floatval($cantidades[$i]) * floatval($precios[$i]);
-                $total += $subtotal;
-            }
-        }
-
-        $facturaId = $facturaModel->insert([
-            'id_usuario'     => $request->getPost('id_usuario'),
-            'fecha_factura'  => date('Y-m-d H:i:s'),
-            'total_factura'  => $total
-        ], true);
-
-        for ($i = 0; $i < count($productos); $i++) {
-            if (!empty($productos[$i]) && $cantidades[$i] > 0) {
-                $ventaModel->insert([
-                    'id_factura'     => $facturaId,
-                    'id_producto'    => $productos[$i],
-                    'cantidad_venta' => $cantidades[$i],
-                    'precio_venta'   => $precios[$i],
-                ]);
-            }
-        }
-
-        return redirect()->to('/ventas')->with('mensaje', 'Venta registrada correctamente');
-    }
-
-
     public function detalle_venta($id)
     {
+        $cart = \Config\Services::cart();
         $facturaModel = new FacturaModel();
         $ventaModel = new VentaModel();
 
         $data['factura'] = $facturaModel
-            ->join('usuario', 'usuario.id_usuario = factura.id_usuario')
             ->select('factura.*, usuario.nombre_usuario, usuario.apellido_usuario')
+            ->join('usuario', 'usuario.id_usuario = factura.id_usuario')
             ->find($id);
 
-        $data['detalles'] = $ventaModel
-            ->join('producto', 'producto.id_producto = venta.id_producto')
+        $data['venta'] = $ventaModel
             ->select('venta.*, producto.nombre_producto')
-            ->where('id_factura', $id)
+            ->join('producto', 'producto.id_producto = venta.id_producto')
+            ->where('venta.id_factura', $id)
             ->findAll();
 
         return view('plantillas/header_view')

@@ -36,10 +36,10 @@
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('consultas'); ?>">Consultas</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium hidden md:block" href="<?php echo base_url('facturas'); ?>">facturas</a>
+              <a class="nav-link nav-link-mate text-white fw-medium hidden md:block" href="<?php echo base_url('facturas'); ?>">Facturas</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('categorias'); ?>">categorias</a>
+              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('categorias'); ?>">Categorias</a>
             </li>
           </ul>
         <?php } else { ?>
@@ -54,7 +54,17 @@
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('terminos-y-condiciones'); ?>">Términos y Condiciones</a>
             </li> -->
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('catalogo'); ?>">Productos</a>
+              <!-- <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('catalogo'); ?>">Productos</a> -->
+              <div class="dropdown">
+                <a class="nav-link nav-link-mate text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Productos
+                </a>
+                <ul class="dropdown-menu border border-dark">
+                  <li><a class="dropdown-item text-dark fw-medium" href="<?= base_url('catalogo/categoria/Bombilla'); ?>">Bombillas</a></li>
+                  <li><a class="dropdown-item text-dark fw-medium" href="<?= base_url('catalogo/categoria/Mate'); ?>">Mates</a></li>
+                  <li><a class="dropdown-item text-dark fw-medium" href="<?= base_url('catalogo/categoria/Termo'); ?>">Termos</a></li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('contacto'); ?>">Contacto</a>
@@ -79,7 +89,7 @@
         <?php else: ?>
           <!-- Menú si el usuario está logueado -->
           <ul class="navbar-nav navbar-nav-end align-items-center">
-            <div class="d-flex align-items-center justify-content-center gap-1 gap-lg-0 ">
+            <div class="d-flex align-items-center justify-content-center gap-1 gap-lg-0">
               <li class="nav-item">
                 <a class="nav-user-info" href="#">
                   <i class="fa-solid fa-user user-icon d-xl-inline d-lg-none"></i> <span><?= session("nombre_usuario"); ?></span>
@@ -107,7 +117,7 @@
             <li class="nav-item">
               <a class="nav-access-mate" href="<?= base_url('logout'); ?>">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
-                <span class="responsive-text">Cerrar Sesión</span>
+                <span class="text-responsive d-lg-none d-xl-inline">Cerrar Sesión</span>
               </a>
             </li>
           </ul>

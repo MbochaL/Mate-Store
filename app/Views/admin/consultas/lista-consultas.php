@@ -19,12 +19,11 @@
             <tbody>
                 <?php foreach ($consultas as $consulta): ?>
                     <tr>
-                        <td><?= esc($consulta['nombre_consulta']) ?></td>
+                        <td><?= isset($consulta['id_usuario']) ? esc($consulta['nombre_usuario'] . ' ' . $consulta['apellido_usuario']) : 'Anonimo' ?></td>
                         <td class="d-none d-lg-table-cell"><?= esc($consulta['email_consulta']) ?></td>
                         <td class="d-none d-md-table-cell"><?= esc($consulta['asunto']) ?></td>
                         <td>
-                            <?= $consulta['nombre_usuario'] ?? 'Anónimo' ?>
-                            <?= isset($consulta['apellido_usuario']) ? $consulta['apellido_usuario'] : '' ?>
+                            <?= isset($consulta['id_usuario']) ? 'Sí' : 'No' ?>
                         </td>
                         <td>
                             <div class="d-flex flex-wrap justify-content-center gap-1">

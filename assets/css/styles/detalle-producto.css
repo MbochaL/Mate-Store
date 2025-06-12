@@ -13,7 +13,7 @@
 }
 
 .producto-detalle-container::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +42,7 @@
 .producto-detalle-image {
     width: 100%;
     height: 400px;
-    object-fit: cover;
+    object-fit: contain;
     transition: all 0.5s ease;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .producto-detalle-title::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;

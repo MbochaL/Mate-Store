@@ -23,7 +23,7 @@
                         <td>$<?= number_format($factura['total_factura'], 2, ',', '.') ?></td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a href="<?= base_url('facturas/ver/' . $factura['id_factura']) ?>" class="btn btn-sm btn-info d-flex align-items-center gap-1">
+                                <a href="<?= base_url('facturas/ver/' . $factura['id_factura']) ?>" class="edit-boton-table d-flex align-items-center gap-1">
                                     <i class="bi bi-eye"></i><span class="d-none d-sm-inline">Ver</span>
                                 </a>
                             </div>

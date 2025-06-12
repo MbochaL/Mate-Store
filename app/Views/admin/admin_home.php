@@ -11,9 +11,9 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
 
         <!-- Productos -->
-        <div class="col admin-card">
+        <div class="col">
             <a href="<?= base_url('productos') ?>" class="text-decoration-none">
-                <div class="card h-100 shadow-sm text-center">
+                <div class="card h-100 shadow-sm text-center admin-card">
                     <div class="card-body">
                         <i class="bi bi-box-seam display-5 mb-3"></i>
                         <h5 class="card-title">Productos</h5>
@@ -24,9 +24,9 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
         </div>
 
         <!-- Categorías -->
-        <div class="col admin-card">
+        <div class="col">
             <a href="<?= base_url('categorias') ?>" class="text-decoration-none">
-                <div class="card h-100 shadow-sm text-center">
+                <div class="card h-100 shadow-sm text-center admin-card">
                     <div class="card-body">
                         <i class="bi bi-tags display-5 mb-3"></i>
                         <h5 class="card-title">Categorías</h5>
@@ -37,9 +37,9 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
         </div>
 
         <!-- Usuarios -->
-        <div class="col admin-card">
+        <div class="col">
             <a href="<?= base_url('usuarios') ?>" class="text-decoration-none">
-                <div class="card h-100 shadow-sm text-center">
+                <div class="card h-100 shadow-sm text-center admin-card">
                     <div class="card-body">
                         <i class="bi bi-people-fill display-5 mb-3"></i>
                         <h5 class="card-title">Usuarios</h5>
@@ -50,9 +50,9 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
         </div>
 
         <!-- Ventas -->
-        <div class="col admin-card">
+        <div class="col">
             <a href="<?= base_url('ventas') ?>" class="text-decoration-none">
-                <div class="card h-100 shadow-sm text-center">
+                <div class="card h-100 shadow-sm text-center admin-card">
                     <div class="card-body">
                         <i class="bi bi-cart-fill display-5 mb-3"></i>
                         <h5 class="card-title">Ventas</h5>
@@ -63,9 +63,9 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
         </div>
 
         <!-- Facturas -->
-        <div class="col admin-card">
+        <div class="col">
             <a href="<?= base_url('facturas') ?>" class="text-decoration-none">
-                <div class="card h-100 shadow-sm text-center">
+                <div class="card h-100 shadow-sm text-center admin-card">
                     <div class="card-body">
                         <i class="bi bi-receipt-cutoff display-5 mb-3"></i>
                         <h5 class="card-title">Facturas</h5>
@@ -76,9 +76,9 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
         </div>
 
         <!-- Consultas -->
-        <div class="col admin-card">
+        <div class="col">
             <a href="<?= base_url('consultas') ?>" class="text-decoration-none">
-                <div class="card h-100 shadow-sm text-center">
+                <div class="card h-100 shadow-sm text-center admin-card">
                     <div class="card-body">
                         <i class="bi bi-envelope-open-fill display-5 mb-3"></i>
                         <h5 class="card-title">Consultas</h5>

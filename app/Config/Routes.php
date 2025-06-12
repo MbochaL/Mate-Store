@@ -37,7 +37,6 @@ $routes->get('usuarios/eliminar/(:num)', 'UsuarioController::eliminar_usuario/$1
 # VENTAS ROUTES
 $routes->get('ventas', 'VentaController::lista_ventas');
 $routes->get('ventas/crear', 'VentaController::crear_venta');
-$routes->post('ventas/guardar', 'VentaController::guardar_venta');
 $routes->get('ventas/ver/(:num)', 'VentaController::detalle_venta/$1');
 $routes->get('ventas/eliminar/(:num)', 'VentaController::eliminar_venta/$1');
 
@@ -50,6 +49,7 @@ $routes->get('consultas/eliminar/(:num)', 'ConsultaController::eliminar_consulta
 # FACTURAS ROUTES
 $routes->get('facturas', 'FacturaController::lista_facturas');
 $routes->get('facturas/ver/(:num)', 'FacturaController::detalle_factura/$1');
+$routes->get('facturas/guardar', 'FacturaController::guardar_factura');
 
 # CATEGORIAS ROUTES
 $routes->get('categorias', 'CategoriaController::lista_categorias');
@@ -58,6 +58,13 @@ $routes->post('categorias/guardar', 'CategoriaController::guardar_categoria');
 $routes->get('categorias/editar/(:num)', 'CategoriaController::editar_categoria/$1');
 $routes->post('categorias/actualizar/(:num)', 'CategoriaController::actualizar_categoria/$1');
 $routes->get('categorias/eliminar/(:num)', 'CategoriaController::eliminar_categoria/$1');
+
+// CARRITO ROUTES
+$routes->get('carrito', 'CarritoController::ver_carrito');
+$routes->post('carrito/agregar_carrito', 'CarritoController::agregar_carrito');
+$routes->get('carrito/vaciar_carrito', 'CarritoController::vaciar_carrito');
+$routes->get('carrito/eliminar_producto/(:any)', 'CarritoController::eliminar_producto/$1');
+$routes->get('carrito/modificar_cantidad/(:segment)/(:any)', 'CarritoController::modificar_cantidad/$1/$2');
 
 // View client routes
 $routes->get('/', 'ClientController::index');
@@ -69,6 +76,7 @@ $routes->get('terminos-y-condiciones', 'ClientController::terminosyCondiciones')
 $routes->get('catalogo', 'ClientController::catalogo');
 $routes->get('catalogo/categoria/(:segment)', 'ClientController::catalogoPorCategoria/$1');
 $routes->get('producto/(:num)', 'ClientController::detalleProducto/$1');
+$routes->get('factura/mostrar/(:num)', 'FacturaController::mostrar_factura/$1');
 
 // Admin route
 $routes->get('admin_dashboard', 'AdminController::AdminDashboard');
