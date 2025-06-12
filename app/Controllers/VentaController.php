@@ -36,56 +36,21 @@ class VentaController extends BaseController
       . view('admin/ventas/crear-venta', $data);
   }
 
-  public function guardar_venta()
-  {
-    $cart = \Config\Services::cart();
-
-    if (empty($cart->contents())) {
-      return redirect()->to('carrito')->with('mensaje', 'El carrito está vacío');
-    }
-
-    // 1. Insertar factura
-    $facturaModel = new FacturaModel();
-    $idFactura = $facturaModel->insert([
-      'id_usuario' => session('id_usuario'),
-      'fecha_factura' => date('Y-m-d H:i:s'),
-      'total_factura' => $cart->total()
-    ]);
-
-    // 2. Insertar ventas
-    $ventaModel = new VentaModel();
-
-    foreach ($cart->contents() as $item) {
-      $ventaModel->insert([
-        'id_factura' => $idFactura,
-        'id_producto' => $item['id'],
-        'cantidad_venta' => $item['qty'],
-        'precio_unitario_venta' => $item['price']
-      ]);
-    }
-
-    // 3. Vaciar el carrito
-    $cart->destroy();
-
-    // 4. Redirigir al resumen de compra
-    return redirect()->to('factura/ver/' . $idFactura)->with('mensaje', 'Compra realizada con éxito');
-  }
-
-
   public function detalle_venta($id)
   {
+    $cart = \Config\Services::cart();
     $facturaModel = new FacturaModel();
     $ventaModel = new VentaModel();
 
     $data['factura'] = $facturaModel
-      ->join('usuario', 'usuario.id_usuario = factura.id_usuario')
       ->select('factura.*, usuario.nombre_usuario, usuario.apellido_usuario')
+      ->join('usuario', 'usuario.id_usuario = factura.id_usuario')
       ->find($id);
 
-    $data['detalles'] = $ventaModel
-      ->join('producto', 'producto.id_producto = venta.id_producto')
+    $data['venta'] = $ventaModel
       ->select('venta.*, producto.nombre_producto')
-      ->where('id_factura', $id)
+      ->join('producto', 'producto.id_producto = venta.id_producto')
+      ->where('venta.id_factura', $id)
       ->findAll();
 
     return view('plantillas/header_view')

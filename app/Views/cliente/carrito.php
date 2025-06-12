@@ -59,7 +59,7 @@
       <a href="<?= base_url('catalogo') ?>" class="btn btn-secondary">Seguir comprando</a>
       <div>
         <a href="<?= base_url('carrito/vaciar_carrito') ?>" class="btn btn-danger me-2">Vaciar carrito</a>
-        <a href="<?= base_url('ventas/guardar') ?>" class="btn btn-success">Finalizar compra</a>
+        <a href="<?= base_url('facturas/guardar') ?>" class="btn btn-success">Finalizar compra</a>
       </div>
     </div>
 

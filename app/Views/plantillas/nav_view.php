@@ -54,7 +54,17 @@
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('terminos-y-condiciones'); ?>">Términos y Condiciones</a>
             </li> -->
             <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('catalogo'); ?>">Productos</a>
+              <!-- <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('catalogo'); ?>">Productos</a> -->
+              <div class="dropdown">
+                <a class="nav-link nav-link-mate text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Productos
+                </a>
+                <ul class="dropdown-menu border border-dark">
+                  <li><a class="dropdown-item text-dark fw-medium" href="<?= base_url('catalogo/categoria/Bombilla'); ?>">Bombillas</a></li>
+                  <li><a class="dropdown-item text-dark fw-medium" href="<?= base_url('catalogo/categoria/Mate'); ?>">Mates</a></li>
+                  <li><a class="dropdown-item text-dark fw-medium" href="<?= base_url('catalogo/categoria/Termo'); ?>">Termos</a></li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('contacto'); ?>">Contacto</a>
