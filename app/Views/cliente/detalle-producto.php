@@ -53,24 +53,40 @@
                 <i class="bi bi-arrow-left me-2"></i> Ir al catálogo
               </a>
 
-              <?php if ($producto['estado_producto'] && $producto['stock_producto'] > 0): ?>
+              <?php
+              $cart = \Config\Services::cart();
+              $en_carrito = 0;
+              foreach ($cart->contents() as $item) {
+                if ($item['id'] == $producto['id_producto']) {
+                  $en_carrito += $item['qty'];
+                }
+              }
+              $stock_disponible = $producto['stock_producto'];
+              $puede_agregar = $en_carrito < $stock_disponible;
+              ?>
 
+              <?php if ($producto['estado_producto'] && $producto['stock_producto'] > 0): ?>
                 <?php if (session()->has('id_usuario')): ?>
-                  <form action="<?= base_url('carrito/agregar_carrito') ?>" method="post">
-                    <input type="hidden" name="id_producto" value="<?= esc($producto['id_producto']) ?>">
-                    <input type="hidden" name="nombre_producto" value="<?= esc($producto['nombre_producto']) ?>">
-                    <input type="hidden" name="precio_producto" value="<?= esc($producto['precio_producto']) ?>">
-                    <input type="hidden" name="img_producto" value="<?= esc($producto['img_producto']) ?>">
-                    <button type="submit" class="producto-detalle-btn-primary">
-                      <i class="bi bi-cart-plus me-2"></i> Añadir al carrito
-                    </button>
-                  </form>
+                  <?php if ($puede_agregar): ?>
+                    <form action="<?= base_url('carrito/agregar_carrito') ?>" method="post">
+                      <input type="hidden" name="id_producto" value="<?= esc($producto['id_producto']) ?>">
+                      <input type="hidden" name="nombre_producto" value="<?= esc($producto['nombre_producto']) ?>">
+                      <input type="hidden" name="precio_producto" value="<?= esc($producto['precio_producto']) ?>">
+                      <input type="hidden" name="img_producto" value="<?= esc($producto['img_producto']) ?>">
+                      <button type="submit" class="producto-detalle-btn-primary">
+                        <i class="bi bi-cart-plus me-2"></i> Añadir al carrito
+                      </button>
+                    </form>
+                  <?php else: ?>
+                    <div class="producto-detalle-alert mt-2">
+                      <i class="bi bi-box-seam me-2"></i> No hay stock disponible.
+                    </div>
+                  <?php endif; ?>
                 <?php else: ?>
                   <div class="producto-detalle-alert">
                     <i class="bi bi-lock me-2"></i> Debes <a href="<?= base_url('login') ?>">iniciar sesión</a> para comprar.
                   </div>
                 <?php endif; ?>
-
               <?php else: ?>
                 <div class="producto-detalle-alert mt-3">
                   <i class="bi bi-exclamation-triangle me-2"></i> Producto no disponible actualmente.
