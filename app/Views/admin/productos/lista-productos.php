@@ -43,6 +43,16 @@
                                 <a href="<?= base_url('productos/ver/' . $producto['id_producto']) ?>" class="edit-boton-table d-flex align-items-center gap-1">
                                     <i class="bi bi-search"></i><span class="d-none d-lg-inline">Ver</span>
                                 </a>
+                                <?php if ($producto['estado_producto'] == 0): ?>
+                                    <a href="<?= base_url('productos/actualizar_estado/' . $producto['id_producto']) ?>" class="edit-boton-table d-flex align-items-center gap-1">
+                                        <i class="bi bi-arrow-up "></i><span class="d-none d-lg-inline">Dar de Alta</span>
+                                    </a>
+                                <?php else: ?>
+                                    <a href="<?= base_url('productos/actualizar_estado/' . $producto['id_producto']) ?>" class="edit-boton-table d-flex align-items-center gap-1">
+                                        <i class="bi bi-arrow-down"></i><span class="d-none d-lg-inline">Dar de baja</span>
+                                    </a>    
+                                <?php endif; ?>
+
                                 <a href="<?= base_url('productos/editar/' . $producto['id_producto']) ?>" class="edit-boton-table d-flex align-items-center gap-1">
                                     <i class="bi bi-pencil-square"></i><span class="d-none d-lg-inline">Editar</span>
                                 </a>

@@ -61,10 +61,11 @@ class ConsultaController extends BaseController
                 'mensaje_consulta'  => $request->getPost('mensaje'),
             ];
 
-
             // Si el usuario está logueado, asociar su ID a la consulta
             if (session()->has('id_usuario')) {
-                $data['id_usuario'] = session('id_usuario');
+                $data['id_usuario'] = session()->get('id_usuario');
+            } else {
+                $data['id_usuario'] = null;
             }
 
             $consulta = new ConsultaModel();

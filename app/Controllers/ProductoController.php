@@ -140,6 +140,21 @@ class ProductoController extends BaseController
         return redirect()->to('/productos')->with('mensaje', 'Producto actualizado correctamente');
     }
 
+    public function actualizar_estado_producto($id) {
+        $productoModel = new ProductoModel();
+        $producto = $productoModel->find($id);
+
+        if (!$producto) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Producto no encontrado");
+        }
+
+        $nuevoEstado = $producto['estado_producto'] ? 0 : 1;
+        $productoModel->update($id, ['estado_producto' => $nuevoEstado]);
+
+        return redirect()->to('/productos')->with('mensaje', 'Estado del producto actualizado correctamente');
+    }
+
+
     public function eliminar_producto($id)
     {
         $productoModel = new ProductoModel();

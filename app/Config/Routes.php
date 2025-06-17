@@ -23,6 +23,7 @@ $routes->get('productos/crear', 'ProductoController::crear_producto');
 $routes->post('productos/guardar', 'ProductoController::guardar_producto');
 $routes->get('productos/editar/(:num)', 'ProductoController::editar_producto/$1');
 $routes->post('productos/actualizar/(:num)', 'ProductoController::actualizar_producto/$1');
+$routes->get('productos/actualizar_estado/(:num)', 'ProductoController::actualizar_estado_producto/$1');
 $routes->get('productos/eliminar/(:num)', 'ProductoController::eliminar_producto/$1');
 
 # USUARIO ROUTES
@@ -77,6 +78,7 @@ $routes->get('catalogo', 'ClientController::catalogo');
 $routes->get('catalogo/categoria/(:segment)', 'ClientController::catalogoPorCategoria/$1');
 $routes->get('producto/(:num)', 'ClientController::detalleProducto/$1');
 $routes->get('factura/mostrar/(:num)', 'FacturaController::mostrar_factura/$1');
+$routes->get('perfil', 'ClientController::perfil');
 
 // Admin route
 $routes->get('admin_dashboard', 'AdminController::AdminDashboard');

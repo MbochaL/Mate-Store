@@ -38,9 +38,6 @@
             <li class="nav-item text-center">
               <a class="nav-link nav-link-mate text-white fw-medium hidden md:block" href="<?php echo base_url('facturas'); ?>">Facturas</a>
             </li>
-            <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('categorias'); ?>">Categorias</a>
-            </li>
           </ul>
         <?php } else { ?>
           <ul class="navbar-nav mx-auto align-items-center align-self-center">
@@ -50,16 +47,13 @@
             <li class="nav-item text-center">
               <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('quienes-somos'); ?>">¿Quiénes Somos?</a>
             </li>
-            <!-- <li class="nav-item text-center">
-              <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('terminos-y-condiciones'); ?>">Términos y Condiciones</a>
-            </li> -->
             <li class="nav-item text-center">
-              <!-- <a class="nav-link nav-link-mate text-white fw-medium" href="<?php echo base_url('catalogo'); ?>">Productos</a> -->
               <div class="dropdown">
                 <a class="nav-link nav-link-mate text-white fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Productos
                 </a>
                 <ul class="dropdown-menu border border-dark">
+                  <li><a class="dropdown-item text-dark fw-medium" href="<?php echo base_url('catalogo'); ?>">Todos</a></li>
                   <li><a class="dropdown-item text-dark fw-medium" href="<?= base_url('catalogo/categoria/Bombilla'); ?>">Bombillas</a></li>
                   <li><a class="dropdown-item text-dark fw-medium" href="<?= base_url('catalogo/categoria/Mate'); ?>">Mates</a></li>
                   <li><a class="dropdown-item text-dark fw-medium" href="<?= base_url('catalogo/categoria/Termo'); ?>">Termos</a></li>
@@ -91,7 +85,7 @@
           <ul class="navbar-nav navbar-nav-end align-items-center">
             <div class="d-flex align-items-center justify-content-center gap-1 gap-lg-0">
               <li class="nav-item">
-                <a class="nav-user-info" href="#">
+                <a class="nav-user-info" href="<?= base_url('perfil'); ?>">
                   <i class="fa-solid fa-user user-icon d-xl-inline d-lg-none"></i> <span><?= session("nombre_usuario"); ?></span>
                 </a>
               </li>

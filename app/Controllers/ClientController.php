@@ -130,4 +130,26 @@ class ClientController extends BaseController
       . view('cliente/detalle-producto', ['producto' => $producto])
       . view('plantillas/footer_view');
   }
+
+  public function perfil()
+  {
+    $session = session();
+
+    if (!$session->get('isLogged')) {
+      return redirect()->to('/login')->with('mensaje', 'Necesitás estar autenticado');
+    }
+
+    $userModel = new \App\Models\UsuarioModel();
+
+    $usuario = $userModel->find($session->get('id_usuario'));
+
+    if (!$usuario) {
+      throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Usuario no encontrado');
+    }
+
+    return view('plantillas/header_view')
+      . view('plantillas/nav_view')
+      . view('cliente/perfil', ['usuario' => $usuario])
+      . view('plantillas/footer_view');
+  }
 }
