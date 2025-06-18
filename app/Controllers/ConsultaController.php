@@ -9,6 +9,11 @@ class ConsultaController extends BaseController
     public function lista_consultas()
     {
         $consultaModel = new ConsultaModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $data['consultas'] = $consultaModel
             ->select('consulta.*, usuario.nombre_usuario, usuario.apellido_usuario')
@@ -86,6 +91,11 @@ class ConsultaController extends BaseController
     public function detalle_consulta($id)
     {
         $consultaModel = new ConsultaModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $data['consulta'] = $consultaModel
             ->select('consulta.*, usuario.nombre_usuario, usuario.apellido_usuario')

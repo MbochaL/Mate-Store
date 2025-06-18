@@ -11,6 +11,11 @@ class UsuarioController extends BaseController
     {
         $usuarioModel = new UsuarioModel();
         $data['usuarios'] = $usuarioModel->findAll();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
@@ -21,6 +26,11 @@ class UsuarioController extends BaseController
     {
         $userModel = new \App\Models\UsuarioModel();
         $rolModel  = new \App\Models\RolModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $usuario = $userModel
             ->join('rol', 'rol.id_rol = usuario.id_rol')
@@ -43,6 +53,11 @@ class UsuarioController extends BaseController
     {
         $rolModel = new RolModel();
         $data['roles'] = $rolModel->findAll();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
@@ -90,6 +105,11 @@ class UsuarioController extends BaseController
     {
         $model = new UsuarioModel();
         $rolModel = new RolModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $data['usuario'] = $model->find($id);
         $data['roles'] = $rolModel->findAll();

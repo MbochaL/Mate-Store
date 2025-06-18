@@ -15,7 +15,6 @@ $routes->get('logout', 'AuthController::logout');
 $routes->get('register', 'AuthController::formulario_registro');
 $routes->post('register', 'AuthController::register');
 
-
 # PRODUCTOS ROUTES
 $routes->get('productos', 'ProductoController::lista_productos');
 $routes->get('productos/ver/(:num)', 'ProductoController::ver_producto/$1');
@@ -37,9 +36,7 @@ $routes->get('usuarios/eliminar/(:num)', 'UsuarioController::eliminar_usuario/$1
 
 # VENTAS ROUTES
 $routes->get('ventas', 'VentaController::lista_ventas');
-$routes->get('ventas/crear', 'VentaController::crear_venta');
 $routes->get('ventas/ver/(:num)', 'VentaController::detalle_venta/$1');
-$routes->get('ventas/eliminar/(:num)', 'VentaController::eliminar_venta/$1');
 
 # CONSULTA ROUTES
 $routes->post('contacto', 'ConsultaController::agregar_consulta');

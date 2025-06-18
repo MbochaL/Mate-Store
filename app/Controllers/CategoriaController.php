@@ -10,6 +10,11 @@ class CategoriaController extends BaseController
     {
         $model = new CategoriaModel();
         $data['categorias'] = $model->findAll();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
@@ -18,6 +23,12 @@ class CategoriaController extends BaseController
 
     public function crear_categoria()
     {
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
+
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
             . view('admin/categorias/crear-categoria');
@@ -49,6 +60,11 @@ class CategoriaController extends BaseController
     {
         $model = new CategoriaModel();
         $data['categoria'] = $model->find($id);
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         if (!$data['categoria']) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Categoría no encontrada");

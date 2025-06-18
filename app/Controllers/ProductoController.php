@@ -11,6 +11,11 @@ class ProductoController extends BaseController
     {
         $productoModel = new ProductoModel();
         $data['productos'] = $productoModel->findAll();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
@@ -20,6 +25,11 @@ class ProductoController extends BaseController
     public function ver_producto($id)
     {
         $productoModel = new \App\Models\ProductoModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $producto = $productoModel
             ->join('categoria', 'categoria.id_categoria = producto.id_categoria')
@@ -41,6 +51,11 @@ class ProductoController extends BaseController
     {
         $categoriaModel = new CategoriaModel();
         $data['categorias'] = $categoriaModel->findAll();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
@@ -91,6 +106,11 @@ class ProductoController extends BaseController
     {
         $productoModel = new ProductoModel();
         $categoriaModel = new CategoriaModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $data['producto'] = $productoModel->find($id);
         $data['categorias'] = $categoriaModel->findAll();
@@ -140,7 +160,8 @@ class ProductoController extends BaseController
         return redirect()->to('/productos')->with('mensaje', 'Producto actualizado correctamente');
     }
 
-    public function actualizar_estado_producto($id) {
+    public function actualizar_estado_producto($id)
+    {
         $productoModel = new ProductoModel();
         $producto = $productoModel->find($id);
 

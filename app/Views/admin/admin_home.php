@@ -5,7 +5,7 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
 <div class="container mt-5">
     <div class="text-center mb-4">
         <h2 class="welcome-title">Bienvenido Administrador <span><?= esc($nombreCompleto) ?></span></h2>
-        <p class="lead">Seleccioná una sección para gestionar tu tienda</p>
+        <p class="lead">Seleccioná una sección para gestionar</p>
     </div>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
