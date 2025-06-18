@@ -65,7 +65,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="<?= base_url('usuarios') ?>" class="btn btn-secondary">Volver</a>
+        <button type="submit" class="add-boton-table">Guardar</button>
+        <a href="<?= base_url('usuarios') ?>" class="delete-boton-table">Cancelar</a>
     </form>
 </div>

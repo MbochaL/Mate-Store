@@ -14,7 +14,7 @@
                 <li class="list-group-item"><strong>Estado:</strong> <?= $usuario['estado_usuario'] ? 'Activo' : 'Inactivo' ?></li>
             </ul>
 
-            <a href="<?= base_url('usuarios') ?>" class="btn btn-secondary mt-3">Volver al listado</a>
+            <a href="<?= base_url('usuarios') ?>" class="edit-boton-table">Volver al listado</a>
         </div>
     </div>
 </div>

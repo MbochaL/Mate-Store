@@ -19,7 +19,7 @@
 
         <div class="mb-3">
             <label for="descripcion_producto" class="form-label">Descripción</label>
-            <textarea class="form-control" name="descripcion_producto" required><?= old('descripcion_producto') ?></textarea>
+            <textarea class="form-control" rows="4" name="descripcion_producto" style="resize: none;" required><?= old('descripcion_producto') ?></textarea>
         </div>
 
         <div class="mb-3">
@@ -55,7 +55,7 @@
             <input type="file" class="form-control" name="img_producto" accept="image/*">
         </div>
 
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="<?= base_url('productos') ?>" class="btn btn-secondary">Volver</a>
+        <button type="submit" class="add-boton-table">Guardar</button>
+        <a href="<?= base_url('productos') ?>" class="edit-boton-table">Volver</a>
     </form>
 </div>

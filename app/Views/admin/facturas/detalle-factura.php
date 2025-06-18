@@ -27,5 +27,5 @@
         </tbody>
     </table>
 
-    <a href="<?= base_url('facturas') ?>" class="btn btn-secondary">Volver</a>
+    <a href="<?= base_url('facturas') ?>" class="edit-boton-table">Volver</a>
 </div>

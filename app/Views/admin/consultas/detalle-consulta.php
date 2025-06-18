@@ -10,5 +10,5 @@
         <?= isset($consulta['nombre_usuario']) ? esc($consulta['nombre_usuario'] . ' ' . $consulta['apellido_usuario']) : 'No' ?>
     </p>
 
-    <a href="<?= base_url('consultas') ?>" class="btn btn-secondary">Volver</a>
+    <a href="<?= base_url('consultas') ?>" class="edit-boton-table">Volver</a>
 </div>

@@ -12,7 +12,6 @@
           <div class="category-main">
             <div class="category-image-container">
               <img src="<?php echo base_url('/assets/img/mate-imperial.jpg'); ?>" alt="Mates" class="category-image">
-              <span class="category-badge">Más vendido</span>
             </div>
             <div class="category-content">
               <div class="category-icon">
@@ -35,7 +34,6 @@
                 </div>
               </div>
               <div class="category-action column-gap-3">
-                <span class="product-count">45 productos</span>
                 <a href="<?= base_url('catalogo/categoria/Mate') ?>" class="category-btn">
                   Ver todos <i class="bi bi-arrow-right btn-icon"></i>
                 </a>
@@ -74,7 +72,6 @@
                 </div>
               </div>
               <div class="category-action column-gap-3">
-                <span class="product-count">28 productos</span>
                 <a href="<?= base_url('catalogo/categoria/Bombilla') ?>" class="category-btn">
                   Ver todos <i class="bi bi-arrow-right btn-icon"></i>
                 </a>
@@ -113,7 +110,6 @@
                 </div>
               </div>
               <div class="category-action column-gap-3">
-                <span class="product-count">32 productos</span>
                 <a href="<?= base_url('catalogo/categoria/Termo'); ?>" class="category-btn">
                   Ver todos <i class="bi bi-arrow-right btn-icon"></i>
                 </a>

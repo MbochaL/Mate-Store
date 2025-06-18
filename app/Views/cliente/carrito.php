@@ -48,18 +48,17 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4" class="text-end"><strong>Total:</strong></td>
-                        <td colspan="2" class="text-center"><strong>$<?= number_format(\Config\Services::cart()->total(), 2, ',', '.') ?></strong></td>
+                        <td colspan="100" class="text-end" style="padding-right: 24px;"><strong>Total:</strong> <strong>$<?= number_format(\Config\Services::cart()->total(), 2, ',', '.') ?></strong></td>
                     </tr>
                 </tfoot>
             </table>
         </div>
 
         <div class="d-flex justify-content-between mt-4">
-            <a href="<?= base_url('catalogo') ?>" class="btn btn-secondary">Seguir comprando</a>
+            <a href="<?= base_url('catalogo') ?>" class="edit-boton-table">Seguir comprando</a>
             <div>
-                <a href="<?= base_url('carrito/vaciar_carrito') ?>" class="btn btn-danger me-2">Vaciar carrito</a>
-                <a href="<?= base_url('facturas/guardar') ?>" class="btn btn-success">Finalizar compra</a>
+                <a href="<?= base_url('carrito/vaciar_carrito') ?>" class="delete-boton-table me-2">Vaciar carrito</a>
+                <a href="<?= base_url('facturas/guardar') ?>" class="add-boton-table">Finalizar compra</a>
             </div>
         </div>
 

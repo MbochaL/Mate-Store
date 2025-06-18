@@ -10,7 +10,6 @@
             <li class="list-group-item"><strong>Teléfono:</strong> <?= esc($usuario['telefono_usuario']) ?> </li>
             <li class="list-group-item"><strong>DNI:</strong> <?= esc($usuario['dni_usuario']) ?> </li>
             <li class="list-group-item"><strong>Dirección:</strong> <?= esc($usuario['direccion_usuario']) ?> </li>
-            <li class="list-group-item"><strong>Rol:</strong> <?= $usuario['id_rol'] == 1 ? 'Usuario' : 'Administrador' ?> </li>
         </ul>
     </div>
 </div>
