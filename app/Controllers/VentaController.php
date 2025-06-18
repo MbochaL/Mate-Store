@@ -28,7 +28,6 @@ class VentaController extends BaseController
 
     public function detalle_venta($id)
     {
-        $cart = \Config\Services::cart();
         $facturaModel = new FacturaModel();
         $ventaModel = new VentaModel();
         $session = session();

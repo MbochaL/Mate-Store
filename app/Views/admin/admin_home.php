@@ -30,7 +30,7 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
                     <div class="card-body">
                         <i class="bi bi-tags display-5 mb-3"></i>
                         <h5 class="card-title">Categorías</h5>
-                        <p class="card-text">Organizá los productos por tipo.</p>
+                        <p class="card-text">Organizá los tipos de productos.</p>
                     </div>
                 </div>
             </a>
@@ -56,7 +56,7 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
                     <div class="card-body">
                         <i class="bi bi-cart-fill display-5 mb-3"></i>
                         <h5 class="card-title">Ventas</h5>
-                        <p class="card-text">Registrar y consultar ventas realizadas.</p>
+                        <p class="card-text">Consultar ventas realizadas.</p>
                     </div>
                 </div>
             </a>
@@ -82,7 +82,7 @@ $nombreCompleto = session()->get('nombre_usuario') . ' ' . session()->get('apell
                     <div class="card-body">
                         <i class="bi bi-envelope-open-fill display-5 mb-3"></i>
                         <h5 class="card-title">Consultas</h5>
-                        <p class="card-text">Revisá los mensajes recibidos por clientes.</p>
+                        <p class="card-text">Revisar las consultas de la tienda.</p>
                     </div>
                 </div>
             </a>

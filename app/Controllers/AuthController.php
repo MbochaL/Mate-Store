@@ -10,7 +10,7 @@ class AuthController extends BaseController
     {
         $session = session();
 
-        if (!$session->get('isLogged')) {
+        if ($session->get('isLogged')) {
             return redirect()->to('/');
         }
 
@@ -66,7 +66,7 @@ class AuthController extends BaseController
     {
         $session = session();
 
-        if (!$session->get('isLogged')) {
+        if ($session->get('isLogged')) {
             return redirect()->to('/');
         }
 

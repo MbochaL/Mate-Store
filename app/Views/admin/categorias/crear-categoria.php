@@ -11,7 +11,7 @@
             <label for="nombre_categoria" class="form-label">Nombre de la categoría</label>
             <input type="text" name="nombre_categoria" class="form-control" value="<?= old('nombre_categoria') ?>" required>
         </div>
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="<?= base_url('categorias') ?>" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="add-boton-table">Guardar</button>
+        <a href="<?= base_url('categorias') ?>" class="delete-boton-table">Cancelar</a>
     </form>
 </div>

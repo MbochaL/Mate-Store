@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-4 mb-5">
     <h2>Editar Usuario</h2>
 
     <?php if (session('validation')): ?>
@@ -66,7 +66,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Actualizar</button>
-        <a href="<?= base_url('usuarios') ?>" class="btn btn-secondary">Volver</a>
+        <button type="submit" class="add-boton-table">Actualizar</button>
+        <a href="<?= base_url('usuarios') ?>" class="edit-boton-table">Volver</a>
     </form>
 </div>

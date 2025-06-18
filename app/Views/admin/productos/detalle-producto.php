@@ -17,7 +17,7 @@
             <p><strong>Categoría:</strong> <?= esc($producto['nombre_categoria']) ?></p>
             <p><strong>Estado:</strong> <?= $producto['estado_producto'] ? 'Activo' : 'Inactivo' ?></p>
 
-            <a href="<?= base_url('productos') ?>" class="btn btn-secondary mt-3">Volver al listado</a>
+            <a href="<?= base_url('productos') ?>" class="edit-boton-table mt-3">Volver al listado</a>
         </div>
     </div>
 </div>

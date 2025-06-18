@@ -5,8 +5,6 @@
         <div class="alert alert-success"><?= session()->getFlashdata('mensaje') ?></div>
     <?php endif; ?>
 
-    <!-- <a href="<?= base_url('ventas/crear') ?>" class="add-boton-table mb-3 d-inline-block">Nueva Venta</a> -->
-
     <div class="table-responsive">
         <table class="table table-bordered table-sm text-center align-middle">
             <thead class="table-secondary">
@@ -30,9 +28,6 @@
                                 <a href="<?= base_url('ventas/ver/' . $factura['id_factura']) ?>" class="edit-boton-table d-flex align-items-center gap-1">
                                     <i class="bi bi-eye"></i><span class="d-none d-lg-inline">Ver</span>
                                 </a>
-                                <!-- <a href="<?= base_url('ventas/eliminar/' . $factura['id_factura']) ?>" class="delete-boton-table d-flex align-items-center gap-1" onclick="return confirm('¿Eliminar esta venta?')">
-                                    <i class="bi bi-trash2"></i><span class="d-none d-lg-inline">Eliminar</span>
-                                </a> -->
                             </div>
                         </td>
                     </tr>
