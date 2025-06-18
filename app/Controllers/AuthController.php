@@ -8,6 +8,12 @@ class AuthController extends BaseController
 {
     public function formulario_registro()
     {
+        $session = session();
+
+        if (!$session->get('isLogged')) {
+            return redirect()->to('/');
+        }
+
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
             . view('auth/register')
@@ -58,6 +64,12 @@ class AuthController extends BaseController
 
     public function formulario_login()
     {
+        $session = session();
+
+        if (!$session->get('isLogged')) {
+            return redirect()->to('/');
+        }
+
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
             . view('auth/login')

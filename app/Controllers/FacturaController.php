@@ -12,6 +12,11 @@ class FacturaController extends BaseController
     public function lista_facturas()
     {
         $facturaModel = new FacturaModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $data['facturas'] = $facturaModel
             ->select('factura.*, usuario.nombre_usuario, usuario.apellido_usuario')
@@ -112,6 +117,11 @@ class FacturaController extends BaseController
     {
         $facturaModel = new FacturaModel();
         $ventaModel   = new VentaModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $data['factura'] = $facturaModel
             ->select('factura.*, usuario.nombre_usuario, usuario.apellido_usuario')

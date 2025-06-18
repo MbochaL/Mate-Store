@@ -4,14 +4,17 @@ namespace App\Controllers;
 
 use App\Models\FacturaModel;
 use App\Models\VentaModel;
-use App\Models\UsuarioModel;
-use App\Models\ProductoModel;
 
 class VentaController extends BaseController
 {
     public function lista_ventas()
     {
         $facturaModel = new FacturaModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $data['facturas'] = $facturaModel
             ->join('usuario', 'usuario.id_usuario = factura.id_usuario')
@@ -23,24 +26,16 @@ class VentaController extends BaseController
             . view('admin/ventas/lista-ventas', $data);
     }
 
-    public function crear_venta()
-    {
-        $userModel = new UsuarioModel();
-        $productoModel = new ProductoModel();
-
-        $data['usuarios'] = $userModel->findAll();
-        $data['productos'] = $productoModel->findAll();
-
-        return view('plantillas/header_view')
-            . view('plantillas/nav_view')
-            . view('admin/ventas/crear-venta', $data);
-    }
-
     public function detalle_venta($id)
     {
         $cart = \Config\Services::cart();
         $facturaModel = new FacturaModel();
         $ventaModel = new VentaModel();
+        $session = session();
+
+        if ($session->get('isLogged') && $session->get('id_rol')    == 2) {
+            return redirect()->to('/inicio')->with('mensaje', 'Necesitás ser admin para ingresar ahi');
+        }
 
         $data['factura'] = $facturaModel
             ->select('factura.*, usuario.nombre_usuario, usuario.apellido_usuario')
@@ -56,16 +51,5 @@ class VentaController extends BaseController
         return view('plantillas/header_view')
             . view('plantillas/nav_view')
             . view('admin/ventas/detalle-venta', $data);
-    }
-
-    public function eliminar_venta($id)
-    {
-        $ventaModel = new VentaModel();
-        $facturaModel = new FacturaModel();
-
-        $ventaModel->where('id_factura', $id)->delete();
-        $facturaModel->delete($id);
-
-        return redirect()->to('/ventas')->with('mensaje', 'Venta eliminada correctamente');
     }
 }
